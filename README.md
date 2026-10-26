@@ -2,6 +2,8 @@
 
 Un skill Claude Code pour relire les contenus web et pro en français : pages de site, FAQ, posts LinkedIn, e-mails, slides. Il ne s'applique pas à la fiction.
 
+Le skill lui-même : [SKILL.md](plugins/relecture-anti-ia/skills/relecture-anti-ia/SKILL.md).
+
 ## Pourquoi
 
 Quand on rédige avec une IA, le texte prend vite la même voix que tout le monde : « Ce n'est pas X, c'est Y », des triades d'adjectifs, « au cœur de », une question en accroche. Le lecteur le sent, même sans savoir dire pourquoi.
