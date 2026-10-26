@@ -1,0 +1,10 @@
+{
+  "name": "relecture-anti-ia",
+  "description": "Relecture en français des tournures typiques d'une IA, pour les textes web et pro. Rapport avec score, fiches une à une, reformulations proposées.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cateline Puccetti",
+    "url": "https://cateline.fr"
+  },
+  "license": "MIT"
+}

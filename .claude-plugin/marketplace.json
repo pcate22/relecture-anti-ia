@@ -1,0 +1,15 @@
+{
+  "name": "cateline-puccetti",
+  "description": "Skills Claude Code de Cateline Puccetti (cateline.fr).",
+  "owner": {
+    "name": "Cateline Puccetti",
+    "url": "https://cateline.fr"
+  },
+  "plugins": [
+    {
+      "name": "relecture-anti-ia",
+      "source": "./plugins/relecture-anti-ia",
+      "description": "Relecture en français des tournures typiques d'une IA, pour les textes web et pro."
+    }
+  ]
+}
