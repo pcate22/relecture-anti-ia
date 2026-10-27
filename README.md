@@ -43,14 +43,14 @@ La grille couvre six familles : structures de phrase, vocabulaire surreprésent
 
 > **3 sur 8. [FORT, tournure IA] Page d'accueil, section « Qui suis-je »**
 >
-> « Consultante en stratégie digitale, j'accompagne les PME. **Mon approche ? Simple et efficace** : **placer l'humain au cœur de** chaque projet. »
+> « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. **Mon approche ? Simple et efficace** : **placer l'humain au cœur de** chaque projet. »
 >
 > **Pourquoi** : accroche en question, formule-choc en deux temps, « au cœur de ».
 >
-> - **A.** « Consultante en stratégie digitale, j'aide les PME à choisir leurs outils et à former leurs équipes. »
+> - **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
 > - **B.** Garder tel quel.
 >
-> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
+> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ? Si c'est important pour vous, on peut le dire en une phrase.
 >
 > A, B, garder, ou votre réponse.
 

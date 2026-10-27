@@ -41,9 +41,9 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 
 **Ce que vaut une réponse** : choisir A ou B sur une fiche vaut accord pour ce passage seulement. Fichier à portée : le modifier pour ce passage, rien d'autre. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
 
-**Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche.
+**Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche. Texte court (moins de 10 fiches) : sauter le choix des niveaux et tout montrer.
 
-**Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport ni poser les questions ci-dessus ; utiliser le guide de voix s'il est déjà connu ou trouvé sans demander, et ne poser une question que si le registre est indispensable et inconnu. Proposer directement une version réécrite, sans fait ajouté, en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. La personne garde, ajuste ou refuse.
+**Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport ni poser les questions ci-dessus ; utiliser le guide de voix s'il est déjà connu ou trouvé sans demander, et ne poser une question que si le registre est indispensable et inconnu. Proposer directement une version réécrite, sans fait ajouté, en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. Bio ou page « À propos » : réécrire quand même, sans rien retirer du sens (public visé, conviction), et ajouter sous la version une ou deux questions sur les passages ambigus. La personne garde, ajuste ou refuse.
 
 ## Format du rapport
 
@@ -80,18 +80,18 @@ Le score juge le texte entier (densité et gravité des marqueurs), pas le nombr
 
 Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf langue »), et attendre la réponse.
 
-**3. Le détail, une fiche à la fois, dans l'ordre du texte** (section par section ; pour une interface, voir « Ordre des fiches » dans Textes d'interface) : sans cet ordre, on ne suit plus. Montrer une seule fiche, attendre la réponse, l'appliquer seulement si elle a été choisie, puis passer à la suivante. Annoncer la position (« 3 sur 8 »). La fiche suit toujours cet ordre :
+**3. Le détail, une fiche à la fois, dans l'ordre du texte** (section par section ; pour une interface, voir « Ordre des fiches » dans Textes d'interface) : sans cet ordre, on ne suit plus. Montrer une seule fiche, attendre la réponse, puis passer à la suivante. Annoncer la position (« 3 sur 8 »). La fiche suit toujours cet ordre :
 
 > **3 sur 8. [FORT, tournure IA] Page d'accueil, section « Qui suis-je »**
 >
-> « Consultante en stratégie digitale, j'accompagne les PME. **Mon approche ? Simple et efficace** : **placer l'humain au cœur de** chaque projet. »
+> « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. **Mon approche ? Simple et efficace** : **placer l'humain au cœur de** chaque projet. »
 >
 > **Pourquoi** : accroche en question, formule-choc en deux temps, « au cœur de ».
 >
-> - **A.** « Consultante en stratégie digitale, j'aide les PME à choisir leurs outils et à former leurs équipes. »
+> - **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
 > - **B.** Garder tel quel.
 >
-> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
+> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ? Si c'est important pour toi, on peut le dire en une phrase.
 >
 > A, B, garder, ou ta réponse.
 
@@ -100,24 +100,56 @@ Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en
 - **Contexte** : la phrase entière, plus celle d'avant ou d'après si elle éclaire le choix ; le passage en cause en **gras**. Jamais un fragment isolé : sans contexte, on ne peut pas trancher.
 - **Pourquoi** : une ligne, le marqueur de la grille (ou « hors grille »).
 - **Niveau et type** en tête : **FORT** (tournure typique, gratuite, ou plusieurs marqueurs dans le même paragraphe), **MOYEN** (marqueur réel, mais qui peut être un choix de voix), **FAIBLE** (habitude humaine courante).
-- **Choix** : une ou deux reformulations (A, B…) qui gardent chaque fait, nom et nuance, et toujours « Garder tel quel ». Une question si le sens est incertain. Jamais d'exemple, de chiffre ou d'anecdote absents de la source : dans l'exemple ci-dessus, la proposition A ne vaut que si la source parle d'outils et de formation ; sinon, poser seulement la question.
+- **Choix** : une ou deux reformulations (A, B…) qui gardent chaque fait, nom et nuance, et toujours « Garder tel quel ». Ne toucher qu'aux mots en gras. Jamais d'exemple, de chiffre ou d'anecdote absents de la source : si le passage ne dit rien de concret, retirer la formule (comme A ci-dessus) et demander ce qu'elle voulait dire, sans le deviner.
+- **Réponse attendue**, en dernière ligne : « A, B, garder, ou ta réponse. » (« votre réponse » si la personne vouvoie). On n'applique que ce qui a été choisi, et rien sans réponse (voir « Ce que vaut une réponse »).
 
 **Pendant les fiches** :
 - Quand un fait est corrigé, chercher tout de suite les autres endroits du document qui le répètent (ex. un tarif corrigé dans la section « Offre », encore présent dans la FAQ) et les proposer dans la même fiche.
-- Une décision vaut pour la suite : si un passage reformulé contient un marqueur qu'il a déjà été décidé de réduire, l'appliquer et le dire.
+- Une décision vaut pour la suite : si un passage reformulé contient un marqueur qu'il a déjà été décidé de réduire, l'intégrer dans la proposition A de la fiche et le dire. Rien n'est écrit sans réponse.
 - Quand la personne dicte en vrac (souvenirs, avis, ce qu'elle veut dire), mettre en forme **avec ses mots** : ordre, ponctuation, accords, rien d'autre. Ne pas inventer d'humour, d'émotion ou de détail ; si le cadre en demande, le lui dire et la laisser compléter. Signaler une ambiguïté par une question courte.
 - Fichier source hors de portée (PDF, outil en ligne) : ne rien modifier, garder la liste des décisions.
-
-**Deux modes plus rapides, seulement si la personne les demande** (par défaut : une fiche à la fois) :
-- **« Corrige typo, orthographe et registre »** : appliquer directement au fichier les corrections de type **langue** (typographie, accords, graphies en double) et **registre** (une fois le registre connu, par le guide de voix ou par une seule question ; hors citations d'autrui et hors cas « à trancher », qui restent en fiche). Graphie en double : prendre la forme du guide de voix ou du glossaire ; sans référence, poser la question une fois. Registre : n'appliquer que les changements mécaniques (pronom, conjugaison, possessif dans la même phrase) ; une phrase à restructurer, ou une chaîne d'interface qui s'allonge, passe en fiche. Avant toute écriture, garder une copie du contenu d'origine (ou vérifier que le fichier est suivi par git, sans modification en cours) : « annuler » veut dire restaurer cette copie, jamais reconstruire de mémoire. Dans un fichier de traduction ou de code : modifier les valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises ; vérifier ensuite que le fichier se lit encore (JSON, YAML…), sinon annuler et passer en fiches. Formats sans vérification simple (`.strings`, `.po`, `.arb`) : pas de mode direct, tout passe en fiches. Puis lister chaque changement, un par ligne, au format « avant → après », et enchaîner sur les fiches pour le reste. Jamais pour les tournures IA, le ton, la régularité ni les brouillons : ces choix restent passage par passage. Hors fichier (texte collé dans la conversation), rendre le texte corrigé au lieu de modifier un fichier.
-- **« Tout d'un coup »** : montrer toutes les fiches retenues dans un seul tableau numéroté (passage, pourquoi, A, B), une ligne de tableau par fiche, cellules courtes (le passage en cause seul, pas la phrase entière ; `|` échappé en `\|`, variables entre accents graves), et accepter une réponse en une ligne (« 1A, 2 garder, 3B… »). Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
 
 **4. Après la dernière fiche**, trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément) :
 - **Décisions** : dans l'ordre suivi pour les fiches, une ligne par passage au format « avant → après », ou « gardé tel quel ». Prête à reporter dans le fichier source.
 - **Non traité** : une ligne par niveau ou type laissé de côté, avec le nombre de passages.
 - **Relu sans rien relever** : une ligne par section, avec ce qui y a été vérifié.
 
-**5. La réponse attendue**, sous chaque fiche : « A, B, garder, ou ta réponse. » (ou « votre réponse » si la personne vouvoie : suivre son registre). On n'applique que ce qui a été choisi, et rien sans réponse.
+Texte collé dans la conversation : après ces trois blocs, rendre le texte complet avec les choix appliqués, prêt à copier.
+
+## Deux modes plus rapides
+
+Seulement si la personne les demande. Par défaut : une fiche à la fois.
+
+### « Corrige typo, orthographe et registre »
+
+Corrige directement la **langue** (typographie, accords, graphies en double) et le **registre**. Jamais les tournures IA, le ton, la régularité ni les brouillons : ceux-là restent en fiches.
+
+Étapes, dans cet ordre :
+
+1. **Références** : guide de voix et glossaire. Registre inconnu ou graphie en double sans référence : une seule question qui regroupe les deux. Pas de question « rédigé avec une IA ? » pour un fichier d'interface.
+2. **Format** : `.strings`, `.po`, `.arb` ou autre format sans vérification simple : arrêter le mode direct, tout passe en fiches.
+3. **Copie** : garder le contenu d'origine (ou vérifier que le fichier est suivi par git, sans modification en cours).
+4. **Corriger** :
+   - valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises (voir Textes d'interface) ;
+   - registre : changements mécaniques seulement (pronom, conjugaison, possessif dans la même phrase) ; une phrase à restructurer, une chaîne qui s'allonge, une citation d'autrui ou un cas « à trancher » passent en fiche ;
+   - espaces fines insécables dans une chaîne d'interface : seulement si le guide de voix les demande, certaines polices les affichent mal.
+5. **Vérifier** que le fichier se lit encore (JSON, YAML : un analyseur, par exemple `python3 -m json.tool`). En cas d'échec : restaurer la copie, jamais reconstruire de mémoire, et passer en fiches.
+6. **Lister** chaque changement, un par ligne, au format « avant → après ».
+7. **Continuer** avec le score et les fiches pour le reste.
+
+Texte collé dans la conversation : pas de fichier, rendre le texte corrigé.
+
+### « Tout d'un coup »
+
+Toutes les fiches retenues en tableaux numérotés, avec les colonnes Section, Passage, Pourquoi, A, B :
+- une ligne par fiche ; dans « Passage », la phrase entière avec le passage en cause en gras (le contexte reste nécessaire) ;
+- `|` échappé en `\|`, variables entre accents graves ;
+- 20 lignes au plus par tableau, section par section, chaque tableau avec sa propre réponse en une ligne (« 1A, 2 garder, 3B… ») ;
+- au-delà d'environ 40 fiches, proposer d'abord de limiter les niveaux traités.
+
+Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
+
+## Règles communes
 
 Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoignage, avis client) : c'est leur texte. Le vocabulaire métier d'un public (Head of Product, churn, MRR) n'est pas un calque à corriger.
 
@@ -125,7 +157,7 @@ Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoigna
 
 - **Page web, libellé, FAQ, e-mail, newsletter** : grille complète.
 - **Bio, page « À propos », lettre signée** : préférer la question à la reformulation (« qu'entends-tu par… ? »). Une proposition qui retire un élément du sens (public visé, conviction) est une faute.
-- **Post LinkedIn ou autre réseau** : la question au lecteur et le « je » sont permis. Refuser l'escalier de paragraphes d'une ligne, la chute-slogan et le « Et vous ? » mécanique.
+- **Post LinkedIn ou autre réseau** : la question au lecteur et le « je » sont permis. Relever (niveau MOYEN) l'escalier de paragraphes d'une ligne, la chute-slogan et le « Et vous ? » mécanique.
 - **Guide, livre blanc, support de formation, slides** : grille complète sur le texte rédigé. Les intitulés courts (« Objectif », « Prérequis ») sont des libellés : les garder brefs et neutres, sans ton promotionnel. Les citations reproduites restent intactes.
 
 - **Interface (app, logiciel, site applicatif)** : voir la section suivante.
@@ -160,10 +192,10 @@ Les règles propres à un projet passent avant cette grille (ex. une charte édi
 | Triade systématique | « innovant, inspirant et engagé » | un seul adjectif, le vrai, ou aucun |
 | Phrase-slogan / titre-slogan | « On vous attend », « On commence quand vous voulez » | un titre qui dit ce que contient la section |
 | Pseudo-clivée | « Ce qui fait bouger les choses, ce sont… », « C'est ce que nous faisons : » | sujet + verbe |
-| Accroche en question | « Et si… ? », « Vous êtes-vous déjà demandé… ? », « Voici comment… » | commencer par l'information |
+| Accroche en question | « Et si… ? », « Vous êtes-vous déjà demandé… ? » | commencer par l'information |
 | Participe présent d'analyse en fin de phrase | « …, soulignant ainsi l'importance de… », « …, reflétant… » | couper, ou une seconde phrase avec un fait |
 | Évitement de « être » | « se veut », « constitue », « sert de », « s'impose comme » | « est » |
-| Conclusion ou résumé systématique | « En somme », « En résumé », « En conclusion », « Malgré ces défis… » | s'arrêter quand c'est dit |
+| Conclusion ou résumé systématique | « En somme », « En résumé », « En conclusion » | s'arrêter quand c'est dit |
 | Même idée reformulée deux fois | phrase d'intro puis phrase qui la répète | garder la meilleure |
 
 ### 2. Vocabulaire surreprésenté
@@ -177,7 +209,7 @@ Mots de style, pas de contenu. Les remplacer par le mot exact, ou les supprimer 
 - abstractions vagues : « un soutien concret », « des actions concrètes », « chacun à sa façon », « une expérience enrichissante » ;
 - précautions : « Il est important de noter que », « il convient de souligner », « Il est essentiel de » ;
 - attributions vagues : « les experts estiment », « selon certains observateurs » ;
-- ouvertures : « Dans un monde où », « À l'ère de », « Plongeons dans », « Parlons de » ;
+- ouvertures : « Dans un monde où », « À l'ère de », « Plongeons dans », « Parlons de », « Voici comment… » ;
 - clôtures : « Et vous ? », « Et ça change tout. », « et bien plus encore », « en toute sérénité » ;
 - connecteurs en série : « De plus », « Par ailleurs », « En effet », « Ainsi », « tout en + participe » ;
 - lexique corporate : accompagner, valoriser, s'inscrire dans, dans le cadre de, écosystème, parcours, aventure, synergie, fort de, en termes de, pleinement, profondément.
@@ -191,7 +223,7 @@ Ces mots sont aussi du français courant : les remplacer quand ils sont creux, l
 - Emojis en tête de puce ou de titre (sauf charte qui les prévoit).
 - Titres à l'anglaise (Une Majuscule À Chaque Mot) : une seule majuscule en français.
 - Guillemets anglais ou droits : « » avec espaces insécables (les guillemets anglais restent justes pour une citation dans une citation).
-- Espace insécable avant `:` et dans « », fine insécable (ou insécable) avant `; ! ?` ; absente = texte collé d'un outil anglophone.
+- Espace insécable avant `:` et dans « », fine insécable (ou insécable) avant `; ! ?` ; absente : souvent un texte venu d'un outil anglophone (mais beaucoup de gens tapent sans).
 - Tableau ou titres de sections pour un texte court.
 
 ### 4. Ton
