@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: site-source
+tags: [source]
+context:
+  scaffold_script: fixture.sh

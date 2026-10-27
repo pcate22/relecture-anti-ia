@@ -39,7 +39,7 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 4. Passer la grille ci-dessous, famille par famille, puis les points hors grille.
 5. Rendre le rapport (format ci-dessous). Ne rien réécrire dans le fichier avant les réponses.
 
-**Ce que vaut une réponse** : choisir A ou B sur une fiche vaut accord pour ce passage seulement. Fichier à portée : le modifier pour ce passage, rien d'autre. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
+**Ce que vaut une réponse** : choisir A ou B sur une fiche vaut accord pour ce passage seulement. Fichier de texte seul (Markdown pur, .txt) : le modifier pour ce passage, rien d'autre. Code (y compris MDX et HTML), fichier de traduction, CMS, design, présentation, document en ligne : ne rien écrire pendant les fiches ; voir « Reporter dans la source », qui demande un accord à part. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
 
 **Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche. Texte court (moins de 10 fiches) : sauter le choix des niveaux et tout montrer.
 
@@ -107,7 +107,7 @@ Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en
 - Quand un fait est corrigé, chercher tout de suite les autres endroits du document qui le répètent (ex. un tarif corrigé dans la section « Offre », encore présent dans la FAQ) et les proposer dans la même fiche.
 - Une décision vaut pour la suite : si un passage reformulé contient un marqueur qu'il a déjà été décidé de réduire, l'intégrer dans la proposition A de la fiche et le dire. Rien n'est écrit sans réponse.
 - Quand la personne dicte en vrac (souvenirs, avis, ce qu'elle veut dire), mettre en forme **avec ses mots** : ordre, ponctuation, accords, rien d'autre. Ne pas inventer d'humour, d'émotion ou de détail ; si le cadre en demande, le lui dire et la laisser compléter. Signaler une ambiguïté par une question courte.
-- Fichier source hors de portée (PDF, outil en ligne) : ne rien modifier, garder la liste des décisions.
+- Source sans outil pour l'écrire (PDF, Keynote, outil en ligne non connecté) : ne rien modifier, garder la liste des décisions. Sinon, voir « Reporter dans la source ».
 
 **4. Après la dernière fiche**, trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément) :
 - **Décisions** : dans l'ordre suivi pour les fiches, une ligne par passage au format « avant → après », ou « gardé tel quel ». Prête à reporter dans le fichier source.
@@ -127,7 +127,11 @@ Corrige directement la **langue** (typographie, accords, graphies en double) et 
 Étapes, dans cet ordre :
 
 1. **Références** : guide de voix et glossaire. Registre inconnu ou graphie en double sans référence : une seule question qui regroupe les deux. Pas de question « rédigé avec une IA ? » pour un fichier d'interface.
-2. **Format** : `.strings`, `.po`, `.arb` ou autre format sans vérification simple : arrêter le mode direct, tout passe en fiches.
+2. **Où écrire** :
+   - texte collé dans la conversation : rendre le texte corrigé ;
+   - Markdown pur, `.txt`, fichier de traduction JSON ou YAML : écrire directement (étapes 3 à 5) ;
+   - `.strings`, `.po`, `.arb` ou autre format sans vérification simple : ne pas écrire ; rendre la liste des corrections, une par ligne ;
+   - code (JSX, Vue, HTML, MDX, templates), CMS, design, présentation, document en ligne : ne pas écrire ; rendre le texte corrigé et la liste, puis proposer « Reporter dans la source », qui demande un accord à part.
 3. **Copie** : garder le contenu d'origine (ou vérifier que le fichier est suivi par git, sans modification en cours).
 4. **Corriger** :
    - valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises (voir Textes d'interface) ;
@@ -151,9 +155,9 @@ Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans répons
 
 ### « Corrige tout »
 
-Pour les très gros volumes (des centaines de passages). **Déconseillé** : le dire au lancement en une ligne (« Le texte va perdre une partie de votre voix ; je recommande de relire au moins les passages FORT »), puis continuer si la personne confirme.
+Pour les très gros volumes (des centaines de passages). **Déconseillé** : le dire au lancement en une ligne (« Le texte va perdre une partie de votre voix ; je recommande de relire au moins les passages FORT »), puis continuer si la personne confirme. Si elle a confirmé d'avance, continuer sans attendre, mais redire cette ligne en tête du livrable.
 
-1. Mêmes étapes 1 à 3 que « Corrige typo, orthographe et registre » (références, format, copie).
+1. Mêmes étapes 1 à 3 que « Corrige typo, orthographe et registre » (références, où écrire, copie). Partout où ce mode-là n'écrit pas (format non vérifiable, code, CMS, design, présentation), « Corrige tout » non plus : il produit le texte corrigé et la liste des décisions, sans repasser en fiches ; le report passe ensuite par « Reporter dans la source », avec accord.
 2. Appliquer la typo, l'orthographe et le registre, puis la proposition A de chaque passage FORT et MOYEN. Les FAIBLE restent tels quels.
 3. Ne jamais appliquer seul, mais lister sous **À voir vous-même** : brouillons, faits personnels à valider, citations d'autrui, passages où la fiche aurait posé une question, cas « à trancher ».
 4. Vérifier avant de livrer (voir « Vérification avant de livrer », obligatoire dans ce mode).
@@ -167,7 +171,7 @@ Pour les très gros volumes (des centaines de passages). **Déconseillé** : le 
 
 Obligatoire en mode « Corrige tout » ; à proposer dans les autres modes quand plus de 20 passages ont été modifiés.
 
-1. **Contrôle mécanique**, si Python est disponible : écrire l'original et le résultat dans deux fichiers temporaires, puis lancer `python3 -I "${CLAUDE_SKILL_DIR}/scripts/compare.py" AVANT APRES`. Le script signale tout chiffre, variable, balise, lien, adresse e-mail ou citation modifiés (BLOQUANT), et les noms propres ajoutés ou retirés (À VÉRIFIER).
+1. **Contrôle mécanique**, si Python est disponible : écrire le texte original et le texte corrigé (texte extrait seul, pas le fichier de code ou la présentation entière ; pour du code, ajouter les attributs de texte, un par ligne, au format « alt: valeur », en gardant les `{…}`) dans deux fichiers temporaires, puis lancer `python3 -I "${CLAUDE_SKILL_DIR}/scripts/compare.py" AVANT APRES`. Le script signale tout chiffre, variable, balise, lien, adresse e-mail ou citation modifiés (BLOQUANT), et les noms propres ajoutés ou retirés (À VÉRIFIER). Il ignore les espaces et la forme des guillemets : passer de “ ” à « » n'est pas bloquant.
 2. **Relecture indépendante**, si l'outil Agent est disponible : lancer un agent qui reçoit seulement l'original, le résultat et cette liste, sans le raisonnement de la relecture :
    - aucun fait ajouté ni retiré (noms, chiffres, dates, lieux, promesses) ;
    - variables, balises et citations identiques ;
@@ -178,6 +182,31 @@ Obligatoire en mode « Corrige tout » ; à proposer dans les autres modes quand
 3. Sans Agent : faire cette relecture soi-même, et le dire dans le rapport (« vérifié sans relecteur indépendant »).
 4. Tout passage signalé par le script ou par le relecteur est **remis dans son état d'origine** et passe en fiche. Ne jamais livrer un passage qui a échoué.
 
+## Reporter dans la source
+
+Le texte relu vient souvent d'ailleurs que la conversation : le code d'un site, un CMS, un design, une présentation. Quand un outil permet d'y écrire, proposer d'y reporter les décisions ; sinon, rendre la liste des décisions à reporter à la main.
+
+| Source | Comment écrire | Précautions |
+|---|---|---|
+| Markdown pur, fichiers de traduction | Edit sur le fichier, après avoir trouvé chaque occurrence par recherche | voir Textes d'interface pour les variables et les clés |
+| Code d'un site ou d'une app (HTML, MDX, JSX, Vue, templates) | Edit sur le fichier | texte visible seulement : contenu des balises, `alt`, `title`, `aria-label`, `placeholder`, props de texte (`label`, `title`…), valeurs passées à une fonction de traduction. Jamais le balisage, les classes, les clés ni la logique. Échapper selon le contexte (`'` dans une chaîne entre apostrophes, `{` et `<` dans du JSX, `&` en HTML) |
+| CMS connecté (Webflow, WordPress, Notion…) | l'outil de modification du connecteur, en mode brouillon (staged) | jamais un appel qui publie ou écrit directement en ligne ; si l'outil n'a pas de brouillon, liste à la main. Prévenir que les changements partiront à la prochaine publication du site, quelle que soit la personne qui la lance |
+| Design Canva | les outils d'édition de Canva, puis l'enregistrement | l'enregistrement modifie le design tout de suite : proposer d'abord de travailler sur une copie. Après écriture, exporter une vignette des pages touchées et la montrer, pour vérifier qu'aucun texte ne déborde |
+| Présentation PowerPoint (.pptx) | script Python avec `python-pptx`, sur une copie du fichier | vérifier d'abord `python3 -c "import pptx"` ; absent : demander avant d'installer quoi que ce soit, sinon liste à la main. Remplacer un passage seulement s'il tient dans un seul run (ou dans des runs de même mise en forme) ; sinon, liste à la main. Notes du présentateur : dans `notes_slide` seulement, jamais dans une zone de la slide |
+| Google Docs, Google Slides | l'outil du connecteur, s'il a une fonction d'écriture | sinon, liste à la main |
+| Keynote, PDF, outil non connecté | aucun | liste à la main |
+
+Notes du présentateur (Canva, Google Slides) : seulement si l'outil y donne accès ; sinon, liste à la main.
+
+Étapes :
+
+1. **Trouver** chaque passage dans la source, exactement. S'il apparaît plusieurs fois (un titre repris en menu, une phrase dupliquée dans deux pages), le dire et demander si toutes les occurrences changent. S'il est introuvable (texte généré, traduit ou assemblé par le code), ne pas deviner : le mettre dans la liste à reporter à la main.
+2. **Montrer** ce qui va changer, une ligne par endroit (fichier ou page, puis « avant → après »), et attendre un accord explicite (« applique »). Les décisions prises en fiche ne valent pas accord pour écrire dans une source distante.
+3. **Sauvegarder** : fichier suivi par git sans modification en cours, ou copie de l'original ; pour un CMS ou un design, écrire l'état d'origine de chaque texte modifié dans un fichier de la session (pas seulement dans la conversation, qui peut être résumée).
+4. **Écrire**, passage par passage.
+5. **Relire la source** après écriture et comparer avec l'attendu (le script de « Vérification avant de livrer » sert aussi ici, sur le texte extrait). Code : lire d'abord les scripts du projet (`package.json` ou équivalent) et ne lancer qu'une vérification en lecture seule (lint ou typecheck sans `--fix` ni `--write`), jamais un build qui déploie, jamais une installation de dépendances ; sinon, dire « non vérifié ». Restaurer tout passage qui ne correspond pas.
+6. **Ne jamais** publier un site, déployer, fusionner une branche, envoyer un e-mail ni partager un document : la personne le fait elle-même.
+
 ## Règles communes
 
 Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoignage, avis client) : c'est leur texte. Le vocabulaire métier d'un public (Head of Product, churn, MRR) n'est pas un calque à corriger.
@@ -187,9 +216,10 @@ Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoigna
 - **Page web, libellé, FAQ, e-mail, newsletter** : grille complète.
 - **Bio, page « À propos », lettre signée** : préférer la question à la reformulation (« qu'entends-tu par… ? »). Une proposition qui retire un élément du sens (public visé, conviction) est une faute.
 - **Post LinkedIn ou autre réseau** : la question au lecteur et le « je » sont permis. Relever (niveau MOYEN) l'escalier de paragraphes d'une ligne, la chute-slogan et le « Et vous ? » mécanique.
-- **Guide, livre blanc, support de formation, slides** : grille complète sur le texte rédigé. Les intitulés courts (« Objectif », « Prérequis ») sont des libellés : les garder brefs et neutres, sans ton promotionnel. Les citations reproduites restent intactes.
+- **Guide, livre blanc, support de formation** : grille complète sur le texte rédigé. Les intitulés courts (« Objectif », « Prérequis ») sont des libellés : les garder brefs et neutres, sans ton promotionnel. Les citations reproduites restent intactes.
 
-- **Interface (app, logiciel, site applicatif)** : voir la section suivante.
+- **Interface (app, logiciel, site applicatif)** : voir Textes d'interface.
+- **Présentation (slides)** : voir Présentations.
 
 ### Textes d'interface
 
@@ -208,6 +238,18 @@ Boutons, libellés, messages d'erreur, états vides, onboarding, notifications, 
 S'il existe un glossaire produit (même recherche que pour le guide de voix : `glossaire.md`, `glossary.md`, lien dans le `CLAUDE.md`, sinon une question), ses termes font référence.
 
 Les règles propres à un projet passent avant cette grille (ex. une charte éditoriale qui impose la forme positive ou interdit le tiret cadratin).
+
+### Présentations (slides)
+
+PowerPoint, Keynote, Google Slides, Canva, ou texte collé.
+
+- **Repérage** : fiches par numéro de slide et zone (« Slide 7, titre », « Slide 7, puce 2 », « Slide 7, notes »).
+- **Notes du présentateur** : relues à part, avec la grille du post (registre oral, « je » et questions permis).
+- **Régularité** : un gabarit répété (titre, sous-titre, pied de page) est normal. Relever en revanche les slides qui ont toutes trois puces de même longueur quand le contenu ne l'impose pas, et la slide « En résumé » qui répète les précédentes.
+- **Titres** : un titre-slogan (« L'humain au cœur ») est FORT ; proposer un titre qui dit ce que montre la slide.
+- **Longueur** : comme pour les interfaces, une reformulation n'est pas plus longue que l'original ; le texte doit tenir dans sa zone.
+- **Mode « Corrige tout »** : jamais écrit directement dans le fichier ; rendre la liste des décisions, puis proposer « Reporter dans la source ».
+- **Report dans le fichier** : voir le tableau de « Reporter dans la source » (PowerPoint, Canva, Google Slides, Keynote).
 
 ## Grille
 

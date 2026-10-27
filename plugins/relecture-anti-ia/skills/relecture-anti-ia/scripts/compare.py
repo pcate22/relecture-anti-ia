@@ -5,6 +5,10 @@ Vérifie que les éléments qui ne doivent pas changer sont toujours là :
 chiffres, variables, balises, liens, adresses e-mail, citations.
 Signale aussi les mots à majuscule (noms propres probables) ajoutés ou retirés.
 
+Comparer le texte extrait, pas un fichier de code entier (les accolades
+du JSX seraient prises pour des variables). Pour du code, extraire aussi les
+attributs de texte, un par ligne : « alt: valeur », « placeholder: valeur ».
+
 Usage : compare.py AVANT APRES
 Code de sortie : 0 si rien de bloquant, 1 si un élément protégé a changé.
 """
@@ -13,19 +17,33 @@ import sys
 from collections import Counter
 
 PROTEGES = {
-    "chiffres": r"\d+(?:[.,   ]\d+)*\s?%?",
+    "chiffres": r"\d+(?:[   ]\d{3})*(?:[.,]\d+)?\s?%?",
     "variables": r"\{\{[^{}]*\}\}|\{[^{}]*\}|%(?:\d+\$)?[@dsfi]|\$\{[^{}]*\}",
     "balises": r"</?[a-zA-Z][^<>]*>",
     "liens": r"https?://[^\s)>\]]+",
     "e-mails": r"[\w.+-]+@[\w-]+\.[\w.-]+",
-    "citations": r"«[^«»]*»|“[^“”]*”",
+    "citations": r"«[^«»]*»|“[^“”]*”|‘[^‘’]*’|(?<![=\w])\"[^\"\n]{3,}\"|(?<![=\w])'[^'\n]{3,}'(?!\w)",
 }
 # Signalé sans bloquer : beaucoup de faux positifs (début de phrase, titres).
 NOMS = r"(?<![.!?]\s)(?<!^)\b[A-ZÀ-Ý][\wÀ-ÿ'-]+"
 
 
-def compter(motif, texte, flags=0):
-    return Counter(m.group(0).strip() for m in re.finditer(motif, texte, flags))
+def normaliser(nom, x):
+    """Ignore ce que la relecture a le droit de changer : espaces et forme des guillemets."""
+    x = re.sub(r"[\s\u00a0\u202f]+", " ", x).strip()
+    if nom == "chiffres":
+        # Seules les espaces (séparateurs de milliers) peuvent changer ; 3,5 n'est pas 35.
+        return re.sub(r" ", "", x)
+    if nom == "balises":
+        # Le texte visible d'un attribut peut changer ; la balise et le reste non.
+        return re.sub(r"""(?<![\w-])(alt|title|aria-label|placeholder|label)=("[^"]*"|'[^']*')""", r"\1=…", x)
+    if nom == "citations":
+        return x.strip("«»“”‘’\"' ").strip()
+    return x
+
+
+def compter(motif, texte, flags=0, nom=""):
+    return Counter(normaliser(nom, m.group(0)) for m in re.finditer(motif, texte, flags))
 
 
 def ecarts(avant, apres):
@@ -41,7 +59,7 @@ def main():
 
     bloquant = False
     for nom, motif in PROTEGES.items():
-        retires, ajoutes = ecarts(compter(motif, avant), compter(motif, apres))
+        retires, ajoutes = ecarts(compter(motif, avant, nom=nom), compter(motif, apres, nom=nom))
         if retires or ajoutes:
             bloquant = True
             print(f"[BLOQUANT] {nom}")

@@ -31,6 +31,14 @@ Sur demande seulement :
 
 **« Corrige tout »** (déconseillé) : le skill applique aussi ses propositions pour les passages forts et moyens, puis vous rend le texte corrigé. Il ne touche jamais aux brouillons, aux faits personnels ni aux citations : il les liste sous « À voir vous-même ». Avant de livrer, il vérifie le résultat avec un script (chiffres, variables, liens et citations inchangés) et, quand c'est possible, avec un agent indépendant. Un passage qui échoue revient à son état d'origine.
 
+### Corriger directement la source
+
+Quand Claude a un moyen d'y écrire, le skill propose de reporter vos décisions là où vit le texte : le code d'un site ou d'une app, un CMS connecté (Webflow, WordPress, Notion), un design Canva, une présentation PowerPoint. Il montre chaque changement, attend votre accord, garde une copie de l'original, relit la source après coup, et ne touche ni au balisage ni au code. Il ne publie et ne déploie jamais : c'est vous qui mettez en ligne.
+
+### Présentations
+
+Pour des slides, les fiches sont repérées par numéro de slide et zone (titre, puce, notes). Les notes du présentateur sont relues comme de l'oral, et les reformulations ne dépassent pas la place disponible.
+
 ### Votre guide de voix
 
 Le skill cherche votre guide de voix avant de relire : d'abord un chemin ou un lien indiqué dans votre `CLAUDE.md` ou dans la conversation, puis un fichier au nom parlant à la racine du projet ou dans `~/.claude/` (`voix.md`, `charte-editoriale.md`, `guide-de-style.md`, `brand-voice.md`, `tone-of-voice.md`…). S'il ne trouve rien, il vous demande une fois si vous en avez un, en fichier, sur Notion ou ailleurs. Un lien Notion ou Google Docs se lit si l'outil est connecté à Claude ; sinon, collez le contenu.
