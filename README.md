@@ -29,7 +29,7 @@ La grille couvre six familles : structures de phrase, vocabulaire surreprésent�
 > B. Garder tel quel.
 > Question : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
 >
-> A, B, garder, ou ta réponse.
+> A, B, garder, ou votre réponse.
 
 ## Installation
 
@@ -43,6 +43,8 @@ Dans une session Claude Code :
 /plugin marketplace add pcate22/relecture-anti-ia
 /plugin install relecture-anti-ia@cateline-puccetti
 ```
+
+La seconde commande ouvre un panneau : choisissez où installer, puis validez.
 
 Ou depuis le terminal :
 
@@ -66,11 +68,13 @@ git clone https://github.com/pcate22/relecture-anti-ia.git
 cp -r relecture-anti-ia/plugins/relecture-anti-ia/skills/relecture-anti-ia ~/.claude/skills/
 ```
 
-Le skill se lance alors avec `/relecture-anti-ia`, ou tout seul quand vous écrivez « ça fait IA » ou « relis ce texte ».
+Si vous avez déjà un dossier `~/.claude/skills/relecture-anti-ia`, cette commande écrase son `SKILL.md` : sauvegardez-le ou renommez-le avant. N'installez pas non plus le plugin et la copie en même temps : les deux répondraient aux mêmes demandes.
+
+Le skill se lance alors avec `/relecture-anti-ia`, ou tout seul quand vous écrivez « ça fait IA » ou « trop ChatGPT ».
 
 ## Limites
 
-- Le score mesure des tournures, pas la provenance. Une IA bien guidée les évite, et un humain en écrit certaines par habitude. Un score bas ne prouve pas qu'un texte est humain, un score haut ne prouve pas qu'il ne l'est pas.
+- Le score mesure des tournures, pas la provenance. Une IA bien guidée les évite, et un humain en écrit certaines par habitude. Un score bas ne prouve pas qu'un texte est humain, un score haut ne prouve pas qu'il vient d'une IA.
 - Un marqueur isolé ne veut rien dire. D'où les niveaux, et la règle : le skill signale, vous tranchez.
 - Il n'existe pas de liste française mesurée statistiquement. Les listes de vocabulaire sont transposées de travaux en anglais.
 - Les citations d'autrui (témoignages, avis clients) ne sont jamais relevées : c'est leur texte.

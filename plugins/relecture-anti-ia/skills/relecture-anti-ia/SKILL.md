@@ -71,7 +71,7 @@ Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf
 
 **4. Après la dernière fiche** : la liste complète des décisions, section par section, au format « avant → après » (et les passages gardés tels quels), prête à reporter dans le fichier source ; les niveaux et types non traités en une ligne chacun (dans l'ordre du texte), puis les sections relues sans rien relever et ce qui y a été vérifié.
 
-**5. La réponse attendue**, sous chaque fiche : « A, B, garder, ou ta réponse. » On n'applique que ce qui a été choisi, et rien sans réponse.
+**5. La réponse attendue**, sous chaque fiche : « A, B, garder, ou ta réponse. » (ou « votre réponse » si la personne vouvoie : suivre son registre) On n'applique que ce qui a été choisi, et rien sans réponse.
 
 Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoignage, avis client) : c'est leur texte. Le vocabulaire métier d'un public (Head of Product, churn, MRR) n'est pas un calque à corriger.
 
