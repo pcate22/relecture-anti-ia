@@ -61,7 +61,7 @@ Dans une session Claude Code :
 
 ```
 /plugin marketplace add pcate22/relecture-anti-ia
-/plugin install relecture-anti-ia@cateline-puccetti
+/plugin install relecture-anti-ia@relecture-anti-ia
 ```
 
 La seconde commande ouvre un panneau : choisissez où installer, puis validez.
@@ -73,7 +73,7 @@ claude plugin marketplace add pcate22/relecture-anti-ia
 ```
 
 ```bash
-claude plugin install relecture-anti-ia@cateline-puccetti
+claude plugin install relecture-anti-ia@relecture-anti-ia
 ```
 
 Le skill s'appelle alors `/relecture-anti-ia:relecture-anti-ia`.
@@ -94,14 +94,14 @@ Le skill se lance alors avec `/relecture-anti-ia`, ou tout seul quand vous écri
 
 ## Mises à jour
 
-Claude Code ne met pas à jour ce plugin tout seul. Pour l'activer : `/plugin`, onglet Marketplaces, choisir `cateline-puccetti`, puis « Enable auto-update ». Ou à la main, quand vous voulez :
+Claude Code ne met pas à jour ce plugin tout seul. Pour l'activer : `/plugin`, onglet Marketplaces, choisir `relecture-anti-ia`, puis « Enable auto-update ». Ou à la main, quand vous voulez :
 
 ```bash
-claude plugin marketplace update cateline-puccetti
+claude plugin marketplace update relecture-anti-ia
 ```
 
 ```bash
-claude plugin update relecture-anti-ia@cateline-puccetti
+claude plugin update relecture-anti-ia@relecture-anti-ia
 ```
 
 Pour être prévenu des nouvelles versions, suivez les Releases du dépôt sur GitHub (bouton Watch, puis Custom, puis Releases). En copie simple, refaites la copie.
