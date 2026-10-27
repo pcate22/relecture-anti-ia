@@ -41,6 +41,8 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 
 **Ce que vaut une réponse** : choisir A ou B sur une fiche vaut accord pour ce passage seulement. Fichier de texte seul (Markdown pur, .txt) : le modifier pour ce passage, rien d'autre. Code (y compris MDX et HTML), fichier de traduction, CMS, design, présentation, document en ligne : ne rien écrire pendant les fiches ; voir « Reporter dans la source », qui demande un accord à part. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
 
+**Accord donné d'avance** (« prends A partout, j'accepte, applique ») : le traiter comme le mode « Tout d'un coup » avec la réponse A pour chaque numéro, sans fiche une à une. Les passages où la fiche aurait posé une question, les brouillons, les faits à valider et les citations ne sont pas couverts : les lister à part. Pour une source autre que du texte seul, cet accord vaut aussi le « applique » de « Reporter dans la source » : montrer le récapitulatif des changements, puis écrire.
+
 **Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche. Texte court (moins de 10 fiches) : sauter le choix des niveaux et tout montrer.
 
 **Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport ni poser les questions ci-dessus ; utiliser le guide de voix s'il est déjà connu ou trouvé sans demander, et ne poser une question que si le registre est indispensable et inconnu. Proposer directement une version réécrite, sans fait ajouté, en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. Bio ou page « À propos » : réécrire quand même, sans rien retirer du sens (public visé, conviction), et ajouter sous la version une ou deux questions sur les passages ambigus. La personne garde, ajuste ou refuse.
@@ -171,7 +173,7 @@ Pour les très gros volumes (des centaines de passages). **Déconseillé** : le 
 
 Obligatoire en mode « Corrige tout » ; à proposer dans les autres modes quand plus de 20 passages ont été modifiés.
 
-1. **Contrôle mécanique**, si Python est disponible : écrire le texte original et le texte corrigé (texte extrait seul, pas le fichier de code ou la présentation entière ; pour du code, ajouter les attributs de texte, un par ligne, au format « alt: valeur », en gardant les `{…}`) dans deux fichiers temporaires, puis lancer `python3 -I "${CLAUDE_SKILL_DIR}/scripts/compare.py" AVANT APRES`. Le script signale tout chiffre, variable, balise, lien, adresse e-mail ou citation modifiés (BLOQUANT), et les noms propres ajoutés ou retirés (À VÉRIFIER). Il ignore les espaces et la forme des guillemets : passer de “ ” à « » n'est pas bloquant.
+1. **Contrôle mécanique**, si Python est disponible : écrire le texte original et le texte corrigé (texte extrait seul, pas le fichier de code ou la présentation entière ; pour du code, ajouter les attributs de texte, un par ligne, au format « alt: valeur », en gardant les `{…}`) dans deux fichiers temporaires, puis lancer `python3 -I "${CLAUDE_SKILL_DIR}/scripts/compare.py" AVANT APRES`. Le script signale tout chiffre, variable, en-tête de message ICU, balise, lien, adresse e-mail ou citation ajouté ou retiré (BLOQUANT ; l'ordre n'est pas vérifié, deux chiffres inversés passent), et les noms propres ajoutés ou retirés (À VÉRIFIER). Il ignore les espaces et la forme des guillemets : passer de “ ” à « » n'est pas bloquant.
 2. **Relecture indépendante**, si l'outil Agent est disponible : lancer un agent qui reçoit seulement l'original, le résultat et cette liste, sans le raisonnement de la relecture :
    - aucun fait ajouté ni retiré (noms, chiffres, dates, lieux, promesses) ;
    - variables, balises et citations identiques ;
@@ -188,7 +190,7 @@ Le texte relu vient souvent d'ailleurs que la conversation : le code d'un site, 
 
 | Source | Comment écrire | Précautions |
 |---|---|---|
-| Markdown pur, fichiers de traduction | Edit sur le fichier, après avoir trouvé chaque occurrence par recherche | voir Textes d'interface pour les variables et les clés |
+| Fichiers de traduction (JSON, YAML, `.strings`, `.po`, `.arb`) | Edit sur le fichier, après avoir trouvé chaque occurrence par recherche | voir Textes d'interface pour les variables et les clés |
 | Code d'un site ou d'une app (HTML, MDX, JSX, Vue, templates) | Edit sur le fichier | texte visible seulement : contenu des balises, `alt`, `title`, `aria-label`, `placeholder`, props de texte (`label`, `title`…), valeurs passées à une fonction de traduction. Jamais le balisage, les classes, les clés ni la logique. Échapper selon le contexte (`'` dans une chaîne entre apostrophes, `{` et `<` dans du JSX, `&` en HTML) |
 | CMS connecté (Webflow, WordPress, Notion…) | l'outil de modification du connecteur, en mode brouillon (staged) | jamais un appel qui publie ou écrit directement en ligne ; si l'outil n'a pas de brouillon, liste à la main. Prévenir que les changements partiront à la prochaine publication du site, quelle que soit la personne qui la lance |
 | Design Canva | les outils d'édition de Canva, puis l'enregistrement | l'enregistrement modifie le design tout de suite : proposer d'abord de travailler sur une copie. Après écriture, exporter une vignette des pages touchées et la montrer, pour vérifier qu'aucun texte ne déborde |
@@ -235,7 +237,7 @@ Boutons, libellés, messages d'erreur, états vides, onboarding, notifications, 
 - **Accessibilité** : relire aussi les textes alternatifs, `aria-label` et libellés pour lecteur d'écran. Un `alt` qui commence par « Image de » ou un bouton-icône sans libellé sont à signaler.
 - **Ordre des fiches** : par écran ou par type d'élément (boutons, erreurs, états vides, aide) plutôt que dans l'ordre du fichier. Annoncer le regroupement choisi.
 
-**Hors champ : l'accessibilité cognitive** (règles d'IHM adaptées aux personnes DYS, TDAH, TSA, FALC). Ce skill ne relit que la voix et la clarté des textes. Si un skill d'accessibilité cognitive est installé, le proposer à la fin du rapport ; sinon, le signaler en une ligne quand la demande porte sur ce sujet.
+**Hors champ : l'accessibilité cognitive** (règles d'IHM adaptées aux personnes DYS, TDAH, TSA, FALC). Ce skill ne relit que la voix et la clarté des textes. Pour un texte d'interface, si un skill d'accessibilité cognitive figure dans la liste des skills disponibles, le proposer en une ligne après le bloc Décisions ; sinon, ne le signaler que si la demande porte sur ce sujet.
 
 S'il existe un glossaire produit (même recherche que pour le guide de voix : `glossaire.md`, `glossary.md`, lien dans le `CLAUDE.md`, sinon une question), ses termes font référence.
 

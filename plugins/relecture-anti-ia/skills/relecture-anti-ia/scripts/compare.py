@@ -17,8 +17,10 @@ import sys
 from collections import Counter
 
 PROTEGES = {
-    "chiffres": r"\d+(?:[   ]\d{3})*(?:[.,]\d+)?\s?%?",
-    "variables": r"\{\{[^{}]*\}\}|\{[^{}]*\}|%(?:\d+\$)?[@dsfi]|\$\{[^{}]*\}",
+    "chiffres": r"(?<![\d,.])(?:\d{1,3}(?:[   ]\d{3})+|\d+)(?:[.,]\d+)?\s?%?",
+    "variables": r"\{\{[^{}]*\}\}|\{\s*[\w.]+\s*\}|%(?:\d+\$)?[@dsfi]|\$\{[^{}]*\}",
+    # En-tête d'un message ICU : le nom et le type ne changent pas, le texte des branches si.
+    "messages ICU": r"\{\s*[\w.]+\s*,\s*(?:plural|select|selectordinal)\s*,",
     "balises": r"</?[a-zA-Z][^<>]*>",
     "liens": r"https?://[^\s)>\]]+",
     "e-mails": r"[\w.+-]+@[\w-]+\.[\w.-]+",
@@ -32,8 +34,12 @@ def normaliser(nom, x):
     """Ignore ce que la relecture a le droit de changer : espaces et forme des guillemets."""
     x = re.sub(r"[\s\u00a0\u202f]+", " ", x).strip()
     if nom == "chiffres":
-        # Seules les espaces (séparateurs de milliers) peuvent changer ; 3,5 n'est pas 35.
-        return re.sub(r" ", "", x)
+        # Espaces des milliers et forme du séparateur décimal peuvent changer ; 3,5 n'est pas 35.
+        return x.replace(" ", "").replace(".", ",")
+    if nom in ("liens", "e-mails"):
+        return x.rstrip(".,;:!?")
+    if nom == "messages ICU":
+        return re.sub(r"\s+", "", x)
     if nom == "balises":
         # Le texte visible d'un attribut peut changer ; la balise et le reste non.
         return re.sub(r"""(?<![\w-])(alt|title|aria-label|placeholder|label)=("[^"]*"|'[^']*')""", r"\1=…", x)
@@ -77,7 +83,7 @@ def main():
             print(f"  ajouté : {x}")
 
     if not bloquant:
-        print("OK : chiffres, variables, balises, liens, e-mails et citations inchangés.")
+        print("OK : chiffres, variables, messages ICU, balises, liens, e-mails et citations inchangés (ordre non vérifié).")
     return 1 if bloquant else 0
 
 

@@ -8,7 +8,7 @@ Le skill lui-même : [SKILL.md](plugins/relecture-anti-ia/skills/relecture-anti
 
 Quand on rédige avec une IA, le texte prend vite la même voix que tout le monde : « Ce n'est pas X, c'est Y », des triades d'adjectifs, « au cœur de », une question en accroche. Le lecteur finit par le remarquer.
 
-Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il repère les tournures, explique pourquoi elles sonnent faux et propose des reformulations. Vous décidez, passage par passage : il ne modifie un passage qu'après votre choix, sauf si vous demandez le mode « Corrige typo, orthographe et registre ». Il n'aide pas à passer un détecteur d'IA : le score ne dit rien de la provenance (voir Limites).
+Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il repère les tournures, explique pourquoi elles sonnent faux et propose des reformulations. Vous décidez, passage par passage : il ne modifie un passage qu'après votre choix, sauf si vous demandez le mode « Corrige typo, orthographe et registre » ou « Corrige tout ». Il n'aide pas à passer un détecteur d'IA : le score ne dit rien de la provenance (voir Limites).
 
 ## Ce qu'il fait
 
@@ -26,14 +26,11 @@ Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il r
 Sur demande seulement :
 - **« Corrige typo, orthographe et registre »** : le skill applique lui-même la typographie, les accords et le registre (tu ou vous, on ou nous), puis liste chaque changement. Les tournures restent à trancher une à une.
 - **« Tout d'un coup »** : toutes les fiches dans un seul tableau, et vous répondez en une ligne (« 1A, 2 garder, 3B »).
-
-### Pour les très gros volumes
-
-**« Corrige tout »** (déconseillé) : le skill applique aussi ses propositions pour les passages forts et moyens, puis vous rend le texte corrigé. Il ne touche jamais aux brouillons, aux faits personnels ni aux citations : il les liste sous « À voir vous-même ». Avant de livrer, il vérifie le résultat avec un script (chiffres, variables, liens et citations inchangés) et, quand c'est possible, avec un agent indépendant. Un passage qui échoue revient à son état d'origine.
+- **« Corrige tout »** (déconseillé, pour les très gros volumes) : le skill applique aussi ses propositions pour les passages forts et moyens, puis vous rend le texte corrigé. Il ne touche jamais aux brouillons, aux faits personnels ni aux citations : il les liste sous « À voir vous-même ». Avant de livrer, il vérifie le résultat avec un script (chiffres, variables, liens et citations inchangés) et, quand c'est possible, avec un agent indépendant. Un passage qui échoue revient à son état d'origine.
 
 ### Corriger directement la source
 
-Quand Claude a un moyen d'y écrire, le skill propose de reporter vos décisions là où vit le texte : le code d'un site ou d'une app, un CMS connecté (Webflow, WordPress, Notion), un design Canva, une présentation PowerPoint. Il montre chaque changement, attend votre accord, garde une copie de l'original, relit la source après coup, et ne touche ni au balisage ni au code. Il ne publie et ne déploie jamais : c'est vous qui mettez en ligne.
+Quand Claude a un moyen d'y écrire, le skill propose de reporter vos décisions là où vit le texte : le code d'un site ou d'une app, un CMS connecté qui propose un brouillon (Webflow, WordPress), un design Canva, une présentation PowerPoint. Il montre chaque changement, attend votre accord, garde une copie de l'original, relit la source après coup, et ne touche ni au balisage ni au code. Il ne publie et ne déploie jamais : c'est vous qui mettez en ligne.
 
 ### Présentations
 
@@ -135,13 +132,13 @@ claude plugin marketplace remove cateline-puccetti
 
 ## Tests
 
-Le plugin a une série de cas de test dans `plugins/relecture-anti-ia/evals/` : post LinkedIn, texte écrit sans IA, fichier de traduction JSON, réécriture d'une page « À propos », mode « Corrige tout ». Pour les lancer depuis ce dossier :
+Le plugin a une série de cas de test dans `plugins/relecture-anti-ia/evals/` : post LinkedIn, texte écrit sans IA, fichier de traduction JSON, réécriture d'une page « À propos », mode « Corrige tout », texte d'un site dans le code (JSX). Pour les lancer depuis ce dossier :
 
 ```bash
 claude plugin eval . --scaffold --allow-tools Write Edit Bash --no-publish
 ```
 
-Le dossier `evals/json-typo/fixture.sh` crée un fichier de test, d'où l'option `--scaffold`. Lisez-le avant de lancer.
+Les fichiers `fixture.sh` de `evals/json-typo` et `evals/site-source` créent des fichiers de test (et un dépôt git local), d'où l'option `--scaffold`. Lisez-les avant de lancer.
 
 ## Limites
 
