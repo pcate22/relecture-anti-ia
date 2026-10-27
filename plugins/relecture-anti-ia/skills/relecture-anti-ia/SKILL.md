@@ -81,11 +81,17 @@ Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf
 **3. Le détail, une fiche à la fois, dans l'ordre du texte** (section par section ; pour une interface, voir « Ordre des fiches » dans Textes d'interface) : sans cet ordre, on ne suit plus. Montrer une seule fiche, attendre la réponse, l'appliquer seulement si elle a été choisie, puis passer à la suivante. Annoncer la position (« 3 sur 8 »). La fiche suit toujours cet ordre :
 
 > **3 sur 8. [FORT, tournure IA] Page d'accueil, section « Qui suis-je »**
+>
 > « Consultante en stratégie digitale, j'accompagne les PME. **Mon approche ? Simple et efficace** : **placer l'humain au cœur de** chaque projet. »
-> Pourquoi : accroche en question, formule-choc en deux temps, « au cœur de ».
-> A. « Consultante en stratégie digitale, j'aide les PME à choisir leurs outils et à former leurs équipes. »
-> B. Garder tel quel.
-> Question : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
+>
+> **Pourquoi** : accroche en question, formule-choc en deux temps, « au cœur de ».
+>
+> - **A.** « Consultante en stratégie digitale, j'aide les PME à choisir leurs outils et à former leurs équipes. »
+> - **B.** Garder tel quel.
+>
+> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
+
+Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en Markdown, des lignes de citation qui se suivent se fondent en un seul paragraphe.
 
 - **Contexte** : la phrase entière, plus celle d'avant ou d'après si elle éclaire le choix ; le passage en cause en **gras**. Jamais un fragment isolé : sans contexte, on ne peut pas trancher.
 - **Pourquoi** : une ligne, le marqueur de la grille (ou « hors grille »).
@@ -99,10 +105,13 @@ Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf
 - Fichier source hors de portée (PDF, outil en ligne) : ne rien modifier, garder la liste des décisions.
 
 **Deux modes plus rapides, seulement si la personne les demande** (par défaut : une fiche à la fois) :
-- **« Corrige le simple »** : appliquer directement au fichier les corrections de type **langue** (typographie, accords, graphies en double) et **registre** (une fois le registre connu, par le guide de voix ou par une seule question ; hors citations d'autrui et hors cas « à trancher », qui restent en fiche). Dans un fichier de traduction ou de code : modifier les valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises ; vérifier ensuite que le fichier se lit encore (JSON, YAML…), sinon annuler et passer en fiches. Puis lister chaque changement au format « avant → après », et enchaîner sur les fiches pour le reste. Jamais pour les tournures IA, le ton, la régularité ni les brouillons : ces choix restent passage par passage. Hors fichier (texte collé dans la conversation), rendre le texte corrigé au lieu de modifier un fichier.
-- **« Tout d'un coup »** : montrer toutes les fiches retenues dans un seul tableau numéroté (passage, pourquoi, A, B), et accepter une réponse en une ligne (« 1A, 2 garder, 3B… »). Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
+- **« Corrige le simple »** : appliquer directement au fichier les corrections de type **langue** (typographie, accords, graphies en double) et **registre** (une fois le registre connu, par le guide de voix ou par une seule question ; hors citations d'autrui et hors cas « à trancher », qui restent en fiche). Dans un fichier de traduction ou de code : modifier les valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises ; vérifier ensuite que le fichier se lit encore (JSON, YAML…), sinon annuler et passer en fiches. Puis lister chaque changement, un par ligne, au format « avant → après », et enchaîner sur les fiches pour le reste. Jamais pour les tournures IA, le ton, la régularité ni les brouillons : ces choix restent passage par passage. Hors fichier (texte collé dans la conversation), rendre le texte corrigé au lieu de modifier un fichier.
+- **« Tout d'un coup »** : montrer toutes les fiches retenues dans un seul tableau numéroté (passage, pourquoi, A, B), une ligne de tableau par fiche, cellules courtes (le passage en cause seul, pas la phrase entière), et accepter une réponse en une ligne (« 1A, 2 garder, 3B… »). Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
 
-**4. Après la dernière fiche** : la liste complète des décisions, dans l'ordre suivi pour les fiches, au format « avant → après » (et les passages gardés tels quels), prête à reporter dans le fichier source ; les niveaux et types non traités en une ligne chacun (dans l'ordre du texte), puis les sections relues sans rien relever et ce qui y a été vérifié.
+**4. Après la dernière fiche**, trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément) :
+- **Décisions** : dans l'ordre suivi pour les fiches, une ligne par passage au format « avant → après », ou « gardé tel quel ». Prête à reporter dans le fichier source.
+- **Non traité** : une ligne par niveau ou type laissé de côté, avec le nombre de passages.
+- **Relu sans rien relever** : une ligne par section, avec ce qui y a été vérifié.
 
 **5. La réponse attendue**, sous chaque fiche : « A, B, garder, ou ta réponse. » (ou « votre réponse » si la personne vouvoie : suivre son registre) On n'applique que ce qui a été choisi, et rien sans réponse.
 

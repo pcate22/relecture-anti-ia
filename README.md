@@ -39,11 +39,15 @@ La grille couvre six familles : structures de phrase, vocabulaire surreprésent
 ## Exemple de fiche
 
 > **3 sur 8. [FORT, tournure IA] Page d'accueil, section « Qui suis-je »**
+>
 > « Consultante en stratégie digitale, j'accompagne les PME. **Mon approche ? Simple et efficace** : **placer l'humain au cœur de** chaque projet. »
-> Pourquoi : accroche en question, formule-choc en deux temps, « au cœur de ».
-> A. « Consultante en stratégie digitale, j'aide les PME à choisir leurs outils et à former leurs équipes. »
-> B. Garder tel quel.
-> Question : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
+>
+> **Pourquoi** : accroche en question, formule-choc en deux temps, « au cœur de ».
+>
+> - **A.** « Consultante en stratégie digitale, j'aide les PME à choisir leurs outils et à former leurs équipes. »
+> - **B.** Garder tel quel.
+>
+> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
 >
 > A, B, garder, ou votre réponse.
 
