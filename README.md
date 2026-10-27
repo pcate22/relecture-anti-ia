@@ -6,17 +6,20 @@ Le skill lui-même : [SKILL.md](plugins/relecture-anti-ia/skills/relecture-anti
 
 ## Pourquoi
 
-Quand on rédige avec une IA, le texte prend vite la même voix que tout le monde : « Ce n'est pas X, c'est Y », des triades d'adjectifs, « au cœur de », une question en accroche. Le lecteur le sent, même sans savoir dire pourquoi.
+Quand on rédige avec une IA, le texte prend vite la même voix que tout le monde : « Ce n'est pas X, c'est Y », des triades d'adjectifs, « au cœur de », une question en accroche. Le lecteur finit par le remarquer.
 
-Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il repère les tournures, explique pourquoi elles sonnent faux et propose des reformulations. Vous décidez, passage par passage : il ne modifie un passage qu'après votre choix. Pour passer un détecteur d'IA, ce n'est pas le bon outil : le score ne dit rien de la provenance (voir Limites).
+Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il repère les tournures, explique pourquoi elles sonnent faux et propose des reformulations. Vous décidez, passage par passage : il ne modifie un passage qu'après votre choix, sauf si vous demandez le mode « Corrige typo, orthographe et registre ». Il n'aide pas à passer un détecteur d'IA : le score ne dit rien de la provenance (voir Limites).
 
 ## Ce qu'il fait
 
 1. Il vous demande si le texte a été rédigé avec une IA. Si oui, il cherche aussi ce qui manque : un exemple vécu, une prise de position, vos expressions.
 2. Il donne un score sur 10, puis, une ligne chacun, le nombre de passages par niveau (fort, moyen, faible), ce qui bloque (texte encore en brouillon, fait à vérifier) et le guide de voix utilisé.
-3. Il vous demande ce que vous voulez traiter, par exemple « forts et moyens, sauf la typographie ».
+3. Il vous demande ce que vous voulez traiter, par exemple « forts et moyens, sauf la langue ».
 4. Il présente les passages un par un, dans l'ordre du texte (par écran pour une interface), et attend votre réponse avant de passer au suivant.
-5. À la fin, il vous rend la liste de vos décisions au format « avant → après », prête à reporter.
+5. À la fin, il vous rend trois listes :
+   - vos décisions au format « avant → après », prêtes à reporter ;
+   - ce qui n'a pas été traité ;
+   - les sections relues sans rien relever.
 
 ### Deux modes plus rapides
 
@@ -105,6 +108,18 @@ claude plugin update relecture-anti-ia@relecture-anti-ia
 ```
 
 Pour être prévenu des nouvelles versions, suivez les Releases du dépôt sur GitHub (bouton Watch, puis Custom, puis Releases). En copie simple, refaites la copie.
+
+### Si vous aviez installé avant la v1.3
+
+La marketplace s'appelait alors `cateline-puccetti`. Désinstallez l'ancienne version, puis reprenez l'installation en plugin ci-dessus :
+
+```bash
+claude plugin uninstall relecture-anti-ia@cateline-puccetti
+```
+
+```bash
+claude plugin marketplace remove cateline-puccetti
+```
 
 ## Limites
 

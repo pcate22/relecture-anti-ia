@@ -9,7 +9,7 @@
     {
       "name": "relecture-anti-ia",
       "source": "./plugins/relecture-anti-ia",
-      "description": "Relecture en français des tournures typiques d'une IA, pour les textes web et pro."
+      "description": "Relecture en français des tournures typiques d'une IA, pour les textes web, pro et d'interface."
     }
   ]
 }

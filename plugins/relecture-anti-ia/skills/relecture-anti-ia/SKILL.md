@@ -41,7 +41,9 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 
 **Ce que vaut une réponse** : choisir A ou B sur une fiche vaut accord pour ce passage seulement. Fichier à portée : le modifier pour ce passage, rien d'autre. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
 
-**Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport. Proposer directement une version réécrite, sans fait ajouté, en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. La personne garde, ajuste ou refuse.
+**Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche.
+
+**Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport ni poser les questions ci-dessus ; utiliser le guide de voix s'il est déjà connu ou trouvé sans demander, et ne poser une question que si le registre est indispensable et inconnu. Proposer directement une version réécrite, sans fait ajouté, en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. La personne garde, ajuste ou refuse.
 
 ## Format du rapport
 
@@ -90,6 +92,8 @@ Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf
 > - **B.** Garder tel quel.
 >
 > **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ?
+>
+> A, B, garder, ou ta réponse.
 
 Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en Markdown, des lignes de citation qui se suivent se fondent en un seul paragraphe.
 
@@ -105,15 +109,15 @@ Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en
 - Fichier source hors de portée (PDF, outil en ligne) : ne rien modifier, garder la liste des décisions.
 
 **Deux modes plus rapides, seulement si la personne les demande** (par défaut : une fiche à la fois) :
-- **« Corrige typo, orthographe et registre »** : appliquer directement au fichier les corrections de type **langue** (typographie, accords, graphies en double) et **registre** (une fois le registre connu, par le guide de voix ou par une seule question ; hors citations d'autrui et hors cas « à trancher », qui restent en fiche). Dans un fichier de traduction ou de code : modifier les valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises ; vérifier ensuite que le fichier se lit encore (JSON, YAML…), sinon annuler et passer en fiches. Puis lister chaque changement, un par ligne, au format « avant → après », et enchaîner sur les fiches pour le reste. Jamais pour les tournures IA, le ton, la régularité ni les brouillons : ces choix restent passage par passage. Hors fichier (texte collé dans la conversation), rendre le texte corrigé au lieu de modifier un fichier.
-- **« Tout d'un coup »** : montrer toutes les fiches retenues dans un seul tableau numéroté (passage, pourquoi, A, B), une ligne de tableau par fiche, cellules courtes (le passage en cause seul, pas la phrase entière), et accepter une réponse en une ligne (« 1A, 2 garder, 3B… »). Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
+- **« Corrige typo, orthographe et registre »** : appliquer directement au fichier les corrections de type **langue** (typographie, accords, graphies en double) et **registre** (une fois le registre connu, par le guide de voix ou par une seule question ; hors citations d'autrui et hors cas « à trancher », qui restent en fiche). Graphie en double : prendre la forme du guide de voix ou du glossaire ; sans référence, poser la question une fois. Registre : n'appliquer que les changements mécaniques (pronom, conjugaison, possessif dans la même phrase) ; une phrase à restructurer, ou une chaîne d'interface qui s'allonge, passe en fiche. Avant toute écriture, garder une copie du contenu d'origine (ou vérifier que le fichier est suivi par git, sans modification en cours) : « annuler » veut dire restaurer cette copie, jamais reconstruire de mémoire. Dans un fichier de traduction ou de code : modifier les valeurs seulement, jamais les clés, délimiteurs, guillemets de syntaxe, apostrophes d'échappement (ICU), variables ni balises ; vérifier ensuite que le fichier se lit encore (JSON, YAML…), sinon annuler et passer en fiches. Formats sans vérification simple (`.strings`, `.po`, `.arb`) : pas de mode direct, tout passe en fiches. Puis lister chaque changement, un par ligne, au format « avant → après », et enchaîner sur les fiches pour le reste. Jamais pour les tournures IA, le ton, la régularité ni les brouillons : ces choix restent passage par passage. Hors fichier (texte collé dans la conversation), rendre le texte corrigé au lieu de modifier un fichier.
+- **« Tout d'un coup »** : montrer toutes les fiches retenues dans un seul tableau numéroté (passage, pourquoi, A, B), une ligne de tableau par fiche, cellules courtes (le passage en cause seul, pas la phrase entière ; `|` échappé en `\|`, variables entre accents graves), et accepter une réponse en une ligne (« 1A, 2 garder, 3B… »). Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
 
 **4. Après la dernière fiche**, trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément) :
 - **Décisions** : dans l'ordre suivi pour les fiches, une ligne par passage au format « avant → après », ou « gardé tel quel ». Prête à reporter dans le fichier source.
 - **Non traité** : une ligne par niveau ou type laissé de côté, avec le nombre de passages.
 - **Relu sans rien relever** : une ligne par section, avec ce qui y a été vérifié.
 
-**5. La réponse attendue**, sous chaque fiche : « A, B, garder, ou ta réponse. » (ou « votre réponse » si la personne vouvoie : suivre son registre) On n'applique que ce qui a été choisi, et rien sans réponse.
+**5. La réponse attendue**, sous chaque fiche : « A, B, garder, ou ta réponse. » (ou « votre réponse » si la personne vouvoie : suivre son registre). On n'applique que ce qui a été choisi, et rien sans réponse.
 
 Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoignage, avis client) : c'est leur texte. Le vocabulaire métier d'un public (Head of Product, churn, MRR) n'est pas un calque à corriger.
 
