@@ -1,6 +1,6 @@
 ---
 name: relecture-anti-ia
-description: Relire un texte en français et rendre un rapport détaillé des tournures typiques d'une IA (ChatGPT, Claude, Gemini) : chaque passage cité dans son contexte, niveau estimé, reformulations proposées. Ne corrige rien soi-même : la personne qui écrit tranche. À utiliser avant de livrer un texte web ou pro destiné à être lu par d'autres (page web, libellé, FAQ, post LinkedIn, e-mail, newsletter, slide), et dès que l'utilisateur dit « ça fait IA », « phrase IA », « trop ChatGPT », « pas naturel », « réécris plus simple », même sans dire « anti-IA ». Ne s'applique pas à la fiction.
+description: Relire un texte en français et rendre un rapport détaillé des tournures typiques d'une IA (ChatGPT, Claude, Gemini) : chaque passage cité dans son contexte, niveau estimé, reformulations proposées. Ne corrige rien soi-même : la personne qui écrit tranche. À utiliser avant de livrer un texte web ou pro destiné à être lu par d'autres (page web, FAQ, post LinkedIn, e-mail, newsletter, slide, textes d'interface d'une app ou d'un logiciel : boutons, messages d'erreur, onboarding, fichiers de traduction), et dès que l'utilisateur dit « ça fait IA », « phrase IA », « trop ChatGPT », « pas naturel », « réécris plus simple », même sans dire « anti-IA ». Ne s'applique pas à la fiction.
 ---
 
 # Relecture anti-IA (français)
@@ -105,6 +105,24 @@ Ne jamais relever ni reformuler une citation d'autrui (recommandation, témoigna
 - **Bio, page « À propos », lettre signée** : préférer la question à la reformulation (« qu'entends-tu par… ? »). Une proposition qui retire un élément du sens (public visé, conviction) est une faute.
 - **Post LinkedIn ou autre réseau** : la question au lecteur et le « je » sont permis. Refuser l'escalier de paragraphes d'une ligne, la chute-slogan et le « Et vous ? » mécanique.
 - **Guide, livre blanc, support de formation, slides** : grille complète sur le texte rédigé. Les intitulés courts (« Objectif », « Prérequis ») sont des libellés : les garder brefs et neutres, sans ton promotionnel. Les citations reproduites restent intactes.
+
+- **Interface (app, logiciel, site applicatif)** : voir la section suivante.
+
+### Textes d'interface
+
+Boutons, libellés, messages d'erreur, états vides, onboarding, notifications, aide en ligne, souvent dans des fichiers de traduction (JSON, YAML, `.strings`, `.po`, `.arb`) ou dans le code.
+
+- **Régularité voulue** : des boutons, erreurs ou confirmations construits pareil, c'est la cohérence d'une interface. Ne pas appliquer la grille §6 aux chaînes courtes ; la garder pour l'onboarding, l'aide et les textes de plus de deux phrases.
+- **Variables et balises intouchables** : `{prenom}`, `%d`, `%@`, `{{count}}`, `{count, plural, …}`, `<b>`, `\n`. Chaque reformulation les garde toutes, à l'identique et sans en ajouter. Ne jamais modifier une clé de traduction, seulement la valeur. Vérifier aussi que chaque forme du pluriel est correcte en français (« 1 fichier », « 0 fichier »).
+- **Longueur** : une reformulation n'est pas plus longue que l'original, sauf demande. Si une limite est connue (bouton, titre de notification, écran mobile), l'indiquer dans la fiche avec le nombre de caractères.
+- **Même nom pour la même chose** : relever le vocabulaire de l'interface (objets, actions) et signaler les doublons (« Supprimer » / « Effacer », « compte » / « profil », « Annuler » pour deux actions différentes). Type **langue**, niveau MOYEN, ou FORT si l'utilisateur peut se tromper d'action.
+- **Forme des verbes** : une seule par type d'élément (boutons à l'infinitif « Enregistrer », ou à l'impératif « Enregistrez »). Signaler les écarts.
+- **Boutons explicites** : le verbe dit ce qui se passe (« Supprimer le projet » plutôt que « OK » dans une confirmation de suppression).
+- **Messages d'erreur** : dire ce qui s'est passé et quoi faire, sans reprocher ni s'excuser à l'excès (« Oups ! », « Une erreur inattendue est survenue »).
+- **Accessibilité** : relire aussi les textes alternatifs, `aria-label` et libellés pour lecteur d'écran. Un `alt` qui commence par « Image de » ou un bouton-icône sans libellé sont à signaler.
+- **Ordre des fiches** : par écran ou par type d'élément (boutons, erreurs, états vides, aide) plutôt que dans l'ordre du fichier. Annoncer le regroupement choisi.
+
+S'il existe un glossaire produit (même recherche que pour le guide de voix : `glossaire.md`, `glossary.md`, lien dans le `CLAUDE.md`, sinon une question), ses termes font référence.
 
 Les règles propres à un projet passent avant cette grille (ex. une charte éditoriale qui impose la forme positive ou interdit le tiret cadratin).
 

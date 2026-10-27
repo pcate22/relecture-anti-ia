@@ -1,6 +1,6 @@
 # relecture-anti-ia
 
-Un skill Claude Code pour relire les contenus web et pro en français : pages de site, FAQ, posts LinkedIn, e-mails, slides. Il ne s'applique pas à la fiction.
+Un skill Claude Code pour relire les contenus web et pro en français : pages de site, FAQ, posts LinkedIn, e-mails, slides, et les textes d'interface d'une app ou d'un logiciel. Il ne s'applique pas à la fiction.
 
 Le skill lui-même : [SKILL.md](plugins/relecture-anti-ia/skills/relecture-anti-ia/SKILL.md).
 
@@ -29,6 +29,10 @@ Sur demande seulement :
 Le skill cherche votre guide de voix avant de relire : d'abord un chemin ou un lien indiqué dans votre `CLAUDE.md`, puis un fichier au nom parlant à la racine du projet ou dans `~/.claude/` (`voix.md`, `charte-editoriale.md`, `guide-de-style.md`, `brand-voice.md`, `tone-of-voice.md`…). S'il ne trouve rien, il vous demande une fois si vous en avez un, en fichier, sur Notion ou ailleurs. Un lien Notion ou Google Docs se lit si l'outil est connecté à Claude ; sinon, collez le contenu.
 
 Il s'en sert pour votre registre, les mots qui sont à vous (il ne les relève plus), ceux que vous refusez et vos règles de typographie. Un modèle est dans [exemples/voix.md](exemples/voix.md). Pour qu'il ne pose plus la question, ajoutez à votre `CLAUDE.md` une ligne comme `Guide de voix : ~/Documents/ma-voix.md`.
+
+### Textes d'interface
+
+Pour une app ou un logiciel (boutons, erreurs, états vides, fichiers de traduction), le skill adapte sa relecture : il ne touche jamais aux variables (`{prenom}`, `%d`), ne propose pas de texte plus long, signale les doublons de vocabulaire (« Supprimer » et « Effacer » pour la même action) et les verbes qui changent de forme, relit les textes alternatifs, et regroupe les fiches par écran. Il suit votre glossaire produit s'il en trouve un.
 
 La grille couvre six familles : structures de phrase, vocabulaire surreprésenté, mise en forme et typographie française, ton, calques de l'anglais, et régularité (des paragraphes tous coulés dans le même moule).
 
