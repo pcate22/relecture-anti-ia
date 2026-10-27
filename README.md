@@ -21,7 +21,7 @@ Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il r
 ### Deux modes plus rapides
 
 Sur demande seulement :
-- **« Corrige le simple »** : le skill applique lui-même la typographie, les accords et le registre (tu ou vous, on ou nous), puis liste chaque changement. Les tournures restent à trancher une à une.
+- **« Corrige la typo et l'orthographe »** : le skill applique lui-même la typographie, les accords et le registre (tu ou vous, on ou nous), puis liste chaque changement. Les tournures restent à trancher une à une.
 - **« Tout d'un coup »** : toutes les fiches dans un seul tableau, et vous répondez en une ligne (« 1A, 2 garder, 3B »).
 
 ### Votre guide de voix
