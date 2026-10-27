@@ -17,7 +17,7 @@ Avant de relire, trouver le guide de voix de la personne, s'il existe. Il peut p
 
 1. **Une indication déjà donnée** : un chemin ou un lien vers un guide de voix, un « tone of voice », une charte éditoriale ou un guide de style dans le `CLAUDE.md` du projet ou de `~/.claude/`, ou plus tôt dans la conversation.
 2. **Un fichier local au nom parlant**, à la racine du projet puis dans `~/.claude/` (sans fouiller le reste du disque) : `voix.md`, `ma-voix.md`, `ton.md`, `charte-editoriale.md`, `guide-de-style.md`, `style.md`, `brand-voice.md`, `tone-of-voice.md`, `tone_of_voice.md`, `voice.md`, `tone.md`. Ignorer la casse, les espaces et l'extension (`.md`, `.txt`) : « Tone of Voice.md » compte.
-3. **Sinon, demander une fois** : « As-tu un guide de voix (tone of voice) ou une charte éditoriale (fichier, page Notion, document en ligne) ? Si oui, donne-moi le chemin ou le lien. » Accepter « non » et relire normalement.
+3. **Sinon, demander une fois** : « Avez-vous un guide de voix (tone of voice) ou une charte éditoriale (fichier, page Notion, document en ligne) ? Si oui, donnez-moi le chemin ou le lien. » (au tutoiement si la personne tutoie) Accepter « non » et relire normalement.
 
 Si la réponse est un lien : le lire avec l'outil connecté qui convient (Notion, Google Drive…). Si aucun outil n'y a accès, demander de coller le contenu. Puis proposer d'ajouter une ligne dans le `CLAUDE.md` (« Guide de voix : <chemin ou lien> ») pour ne plus avoir à le demander ; ne l'écrire qu'avec accord.
 
@@ -27,7 +27,7 @@ Une fois trouvé, vérifier que le contenu décrit bien une façon d'écrire (un
 - **mots refusés** : les relever au niveau FORT, quel que soit le contexte, sauf dans une citation d'autrui ;
 - **règles typographiques** (tiret cadratin, emojis, insécables) : elles passent avant la grille.
 
-Le guide décrit une voix, il ne contient pas de faits : ne jamais en tirer d'anecdote, de chiffre ou de souvenir pour compléter un texte. Dire en tête du rapport quel guide a servi (ou qu'aucun n'a été trouvé).
+Le guide décrit une voix, il ne contient pas de faits : ne jamais en tirer d'anecdote, de chiffre ou de souvenir pour compléter un texte. Le nommer dans la ligne « Relecture » du bilan final ; en tête seulement s'il est inattendu (voir Format du rapport).
 
 S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se répètent (même registre, même mot refusé trois fois), proposer de les noter dans un `voix.md` et montrer le contenu avant de l'écrire. Ne jamais créer ni modifier ce fichier sans accord.
 
@@ -39,28 +39,28 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 4. Passer la grille ci-dessous, famille par famille, puis les points hors grille.
 5. Rendre le rapport (format ci-dessous). Ne rien réécrire dans le fichier avant les réponses.
 
-**Ce que vaut une réponse** : choisir A ou B sur une fiche vaut accord pour ce passage seulement. Fichier de texte seul (Markdown pur, .txt) : le modifier pour ce passage, rien d'autre. Code (y compris MDX et HTML), fichier de traduction, CMS, design, présentation, document en ligne : ne rien écrire pendant les fiches ; voir « Reporter dans la source », qui demande un accord à part. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
+**Ce que vaut une réponse** : choisir A sur une fiche vaut accord pour ce passage seulement. Fichier de texte seul (Markdown pur, .txt) : le modifier pour ce passage, rien d'autre. Code (y compris MDX et HTML), fichier de traduction, CMS, design, présentation, document en ligne : ne rien écrire pendant les fiches ; voir « Reporter dans la source », qui demande un accord à part. Texte collé dans la conversation ou fichier hors de portée : noter la décision pour la liste finale.
 
 **Accord donné d'avance** (« prends A partout, j'accepte, applique ») : le traiter comme le mode « Tout d'un coup » avec la réponse A pour chaque numéro, sans fiche une à une. Les passages où la fiche aurait posé une question, les brouillons, les faits à valider et les citations ne sont pas couverts : les lister à part. Pour une source autre que du texte seul, cet accord vaut aussi le « applique » de « Reporter dans la source » : montrer le récapitulatif des changements, puis écrire.
 
-**Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche. Texte court (moins de 10 fiches) : sauter le choix des niveaux et tout montrer.
+**Ordre des questions avant le rapport** : chercher le guide de voix (et ne demander que s'il n'est pas trouvé), puis la question « rédigé avec une IA ? », puis le score et le choix des niveaux. Pas d'autre question avant la première fiche. Jusqu'à 10 fiches : sauter le choix des niveaux et tout montrer.
 
-**Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport ni poser les questions ci-dessus ; utiliser le guide de voix s'il est déjà connu ou trouvé sans demander, et ne poser une question que si le registre est indispensable et inconnu. Proposer directement une version réécrite, sans fait ajouté, en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. Bio ou page « À propos » : réécrire quand même, sans rien retirer du sens (public visé, conviction), et ajouter sous la version une ou deux questions sur les passages ambigus. La personne garde, ajuste ou refuse.
+**Demande de réécriture explicite** (« réécris plus simple ce paragraphe ») : ne pas dérouler le rapport ni poser les questions ci-dessus ; utiliser le guide de voix s'il est déjà connu ou trouvé sans demander, et ne poser une question que si le registre est indispensable et inconnu. Proposer directement une version réécrite, sans fait ni affirmation ajoutés (voir « Retirer plutôt que remplacer » dans Choix), en gardant intactes les variables et les citations, puis lister en une ligne les marqueurs retirés. Bio ou page « À propos » : réécrire quand même, sans rien retirer du sens (public visé, conviction), et ajouter sous la version une ou deux questions sur les passages ambigus. La personne garde, ajuste ou refuse.
 
 ## Format du rapport
 
 Le rapport doit être facile à lire : il se parcourt d'un coup d'œil, l'essentiel en premier, toujours dans le même ordre. Pas d'emoji. S'adresser à la personne dans un seul registre du début à la fin : celui de son guide de voix, sinon celui qu'elle emploie dans sa demande, sinon le vouvoiement. Ne pas confondre avec le registre du texte relu.
 
-**1. L'en-tête : quatre lignes au plus, puis la première fiche.** Pas de préambule, pas de tableau, pas de paragraphe sur la méthode. Une information par ligne :
+**1. L'en-tête : quatre lignes au plus, puis la première fiche.** Pas de préambule, pas de tableau, pas de paragraphe sur la méthode. Une rubrique par ligne :
 
 > **Problème principal** : deux formules toutes faites ouvrent la page (« au cœur de », « Simple et efficace »).
 >
-> **3/10** (faible) · 8 fiches · environ 10 minutes
+> **Score 3/10**, peu marqué, 8 fiches, environ 10 minutes, une fiche à la fois
 >
 > **Bloquant** : la section « Tarifs » est encore en brouillon (fiche 4).
 
 - **Problème principal** : une phrase, ce qui gêne le plus dans ce texte, en termes concrets (pas « des tournures d'IA »). S'il n'y a rien : « Rien de notable. »
-- **Score, nombre de fiches, temps** sur une seule ligne courte.
+- **Score, nombre de fiches, temps** sur une seule ligne courte, séparés par des virgules. Pour le score, des mots qui ne se confondent pas avec les niveaux des fiches : « peu marqué » (3 à 4), « marqué » (5 à 6), « très marqué » (7 et plus), « rien de notable » (0 à 2). Le nombre de fiches compte celles qui seront montrées (après filtre, s'il y en a un).
 - **Bloquant** : seulement s'il y en a, avec le numéro de fiche.
 - Tout le reste (guide de voix utilisé, décompte par niveau et par type, ce qui n'a pas été relu, le fait que le score ne dit rien de la provenance) ne s'affiche pas au début. Le mettre dans le bilan final (point 4), ou le donner si la personne le demande. Exception : le guide de voix tient en une ligne de plus s'il est inattendu (trouvé ailleurs que dans `voix.md`).
 
@@ -87,17 +87,17 @@ Le score juge le texte entier (densité et gravité des marqueurs), pas le nombr
 >
 > **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
 >
-> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ? Si c'est important pour toi, on peut le dire en une phrase.
+> **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ? Si c'est important pour vous, on peut le dire en une phrase.
 >
-> A, garder, ou ta version.
+> A, garder, ou votre version.
 
 Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en Markdown, des lignes de citation qui se suivent se fondent en un seul paragraphe.
 
 - **Contexte** : la phrase entière, plus celle d'avant ou d'après si elle éclaire le choix ; le passage en cause en **gras**. Jamais un fragment isolé : sans contexte, on ne peut pas trancher.
 - **Pourquoi** : une ligne courte, le marqueur de la grille (ou « hors grille »). Pas de justification en plusieurs phrases.
 - **Niveau et type** en tête : **FORT** (tournure typique, gratuite, ou plusieurs marqueurs dans le même paragraphe), **MOYEN** (marqueur réel, mais qui peut être un choix de voix), **FAIBLE** (habitude humaine courante).
-- **Choix** : une reformulation (A), ou deux (A et B) seulement si elles vont dans des directions vraiment différentes. Chaque reformulation garde chaque fait, nom et nuance. « Garder » n'a jamais de lettre : c'est toujours l'option implicite, rappelée dans la dernière ligne. Ne toucher qu'aux mots en gras. Jamais d'exemple, de chiffre ou d'anecdote absents de la source : si le passage ne dit rien de concret, retirer la formule (comme A ci-dessus) et demander ce qu'elle voulait dire, sans le deviner.
-- **Réponse attendue**, en dernière ligne, avec exactement les options de la fiche : « A, garder, ou ta version. » ou « A, B, garder, ou ta version. » (« votre version » si la personne vouvoie). Si l'interface affiche des boutons de réponse et n'en permet que deux : avec une seule reformulation, « A » et « Garder » ; avec deux, « A » et « B », et « garder » reste dans la dernière ligne. Les boutons et la dernière ligne disent toujours la même chose. On n'applique que ce qui a été choisi, et rien sans réponse (voir « Ce que vaut une réponse »).
+- **Choix** : **une seule reformulation, A**, qui garde chaque fait, nom et nuance. **Retirer plutôt que remplacer** : une formule creuse (« placer l'humain au cœur », « se veut un véritable partenaire ») se supprime ou se ramène à ce qu'elle dit déjà ; ne jamais la remplacer par une affirmation nouvelle (« je pars de leurs besoins réels », « j'en ai fait mon métier », « travaille avec vous »). Si elle cache une idée, la demander dans la Question. S'il existe une autre direction vraiment différente (supprimer la phrase, la scinder), la proposer dans la **Question**, pas comme une deuxième option. « Garder » n'a jamais de lettre. Fiche sans reformulation possible (brouillon, fait à valider) : pas de A, seulement la question.
+- **Réponse attendue**, en dernière ligne : « A, garder, ou votre version. » (« ta version » si la personne tutoie). Si l'interface affiche des boutons de réponse : exactement deux, « A » et « Garder », les mêmes que la dernière ligne ; « votre version » correspond au champ libre. Fiche sans reformulation : boutons « C'est exact » et « À corriger », ou pas de bouton si la question est ouverte. Adapter tous les exemples de ce fichier au registre retenu, y compris « À voir vous-même ».
 
 **Pendant les fiches** :
 - Quand un fait est corrigé, chercher tout de suite les autres endroits du document qui le répètent (ex. un tarif corrigé dans la section « Offre », encore présent dans la FAQ) et les proposer dans la même fiche.
@@ -105,7 +105,7 @@ Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en
 - Quand la personne dicte en vrac (souvenirs, avis, ce qu'elle veut dire), mettre en forme **avec ses mots** : ordre, ponctuation, accords, rien d'autre. Ne pas inventer d'humour, d'émotion ou de détail ; si le cadre en demande, le lui dire et la laisser compléter. Signaler une ambiguïté par une question courte.
 - Source sans outil pour l'écrire (PDF, Keynote, outil en ligne non connecté) : ne rien modifier, garder la liste des décisions. Sinon, voir « Reporter dans la source ».
 
-**4. Après la dernière fiche**, un bilan court. Trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément), puis une ligne « Relecture » (guide de voix utilisé, score avant et après si des passages ont changé, ce qui n'a pas été relu) :
+**4. Après la dernière fiche**, un bilan court. Trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément), puis une ligne « Relecture » (guide de voix utilisé, score avant et après si des passages ont changé, ce qui n'a pas été relu, et, si le texte a été rédigé avec une IA, que le score ne mesure pas la provenance) :
 - **Décisions** : dans l'ordre suivi pour les fiches, une ligne par passage au format « avant → après », ou « gardé tel quel ». Prête à reporter dans le fichier source.
 - **Non traité** : une ligne par niveau ou type laissé de côté, avec le nombre de passages.
 - **Relu sans rien relever** : une ligne par section, avec ce qui y a été vérifié.
@@ -141,10 +141,10 @@ Texte collé dans la conversation : pas de fichier, rendre le texte corrigé.
 
 ### « Tout d'un coup »
 
-Toutes les fiches retenues en tableaux numérotés, avec les colonnes Section, Passage, Pourquoi, A, B :
+Toutes les fiches retenues en tableaux numérotés, avec les colonnes Section, Passage, Pourquoi, A :
 - une ligne par fiche ; dans « Passage », la phrase entière avec le passage en cause en gras (le contexte reste nécessaire) ;
 - `|` échappé en `\|`, variables entre accents graves ;
-- 20 lignes au plus par tableau, section par section, chaque tableau avec sa propre réponse en une ligne (« 1A, 2 garder, 3B… ») ;
+- 20 lignes au plus par tableau, section par section, chaque tableau avec sa propre réponse en une ligne (« 1A, 2 garder, 3A… ») ;
 - au-delà d'environ 40 fiches, proposer d'abord de limiter les niveaux traités.
 
 Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.

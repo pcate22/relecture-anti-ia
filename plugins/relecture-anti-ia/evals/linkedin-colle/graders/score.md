@@ -1,4 +1,5 @@
 ---
 type: regex
-pattern: '\d+\s*/\s*10'
+pattern: '^[^\n]*[Ss]core\s*\d+\s*/\s*10'
+flags: m
 ---
