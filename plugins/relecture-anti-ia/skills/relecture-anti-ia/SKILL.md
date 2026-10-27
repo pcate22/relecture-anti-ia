@@ -49,20 +49,22 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 
 ## Format du rapport
 
-Le rapport doit être facile à lire : il se parcourt d'un coup d'œil, l'essentiel en premier, toujours dans le même ordre. Pas d'emoji.
+Le rapport doit être facile à lire : il se parcourt d'un coup d'œil, l'essentiel en premier, toujours dans le même ordre. Pas d'emoji. S'adresser à la personne dans un seul registre du début à la fin : celui de son guide de voix, sinon celui qu'elle emploie dans sa demande, sinon le vouvoiement. Ne pas confondre avec le registre du texte relu.
 
-**1. Score global**, en tête : une information par ligne, en liste courte, jamais plusieurs éléments à la suite sur une même ligne :
+**1. L'en-tête : quatre lignes au plus, puis la première fiche.** Pas de préambule, pas de tableau, pas de paragraphe sur la méthode. Une information par ligne :
 
-> **Score de tournures IA : 3/10** (faible)
+> **Problème principal** : deux formules toutes faites ouvrent la page (« au cœur de », « Simple et efficace »).
 >
-> - 2 passages forts
-> - 3 moyens
-> - 4 faibles
-> - Bloquant : la section « Tarifs » est encore en brouillon
-> - Guide de voix : `voix.md` (racine du projet)
-> - Temps estimé pour trancher : 10 minutes
+> **3/10** (faible) · 8 fiches · environ 10 minutes
+>
+> **Bloquant** : la section « Tarifs » est encore en brouillon (fiche 4).
 
-Ce score mesure les tournures d'IA, **pas la provenance** : une IA bien guidée (consignes de style) les évite, et son texte peut avoir un score bas. Le dire dans le rapport quand le texte a été rédigé avec une IA.
+- **Problème principal** : une phrase, ce qui gêne le plus dans ce texte, en termes concrets (pas « des tournures d'IA »). S'il n'y a rien : « Rien de notable. »
+- **Score, nombre de fiches, temps** sur une seule ligne courte.
+- **Bloquant** : seulement s'il y en a, avec le numéro de fiche.
+- Tout le reste (guide de voix utilisé, décompte par niveau et par type, ce qui n'a pas été relu, le fait que le score ne dit rien de la provenance) ne s'affiche pas au début. Le mettre dans le bilan final (point 4), ou le donner si la personne le demande. Exception : le guide de voix tient en une ligne de plus s'il est inattendu (trouvé ailleurs que dans `voix.md`).
+
+Ce score mesure les tournures d'IA, **pas la provenance** : une IA bien guidée (consignes de style) les évite, et son texte peut avoir un score bas.
 
 Barème du score sur 10 :
 - **0 à 2** : rien ou presque, quelques habitudes humaines ;
@@ -73,14 +75,7 @@ Barème du score sur 10 :
 
 Le score juge le texte entier (densité et gravité des marqueurs), pas le nombre brut : un seul passage fort dans une bio courte pèse plus que quatre faibles dans un guide de 40 pages.
 
-**2. Choisir ce qu'on montre.** Après le score, un petit tableau du décompte, par niveau (bloquant, fort, moyen, faible) et par type de problème :
-- **brouillon** : reste de chantier, fait personnel à valider ;
-- **tournure IA** : un marqueur de la grille (structure, vocabulaire, ton) ;
-- **registre** : tu/vous, on/nous, inclusif/masculin ;
-- **régularité** : prose au même moule (voir grille §6) ;
-- **langue** : accord, titre qui ne correspond pas, graphie, typographie.
-
-Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf langue »), et attendre la réponse.
+**2. Choisir ce qu'on montre**, seulement au-delà de 10 fiches. Une ligne de décompte (« 2 forts, 5 moyens, 14 faibles »), puis une seule question : quels niveaux traiter. Types possibles, si la personne veut filtrer : **brouillon** (reste de chantier, fait à valider), **tournure IA**, **registre**, **régularité** (prose au même moule, grille §6), **langue** (accord, graphie, typographie). À 10 fiches ou moins : tout montrer, sans demander.
 
 **3. Le détail, une fiche à la fois, dans l'ordre du texte** (section par section ; pour une interface, voir « Ordre des fiches » dans Textes d'interface) : sans cet ordre, on ne suit plus. Montrer une seule fiche, attendre la réponse, puis passer à la suivante. Annoncer la position (« 3 sur 8 »). La fiche suit toujours cet ordre :
 
@@ -90,20 +85,19 @@ Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf
 >
 > **Pourquoi** : accroche en question, formule-choc en deux temps, « au cœur de ».
 >
-> - **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
-> - **B.** Garder tel quel.
+> **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
 >
 > **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ? Si c'est important pour toi, on peut le dire en une phrase.
 >
-> A, B, garder, ou ta réponse.
+> A, garder, ou ta version.
 
 Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en Markdown, des lignes de citation qui se suivent se fondent en un seul paragraphe.
 
 - **Contexte** : la phrase entière, plus celle d'avant ou d'après si elle éclaire le choix ; le passage en cause en **gras**. Jamais un fragment isolé : sans contexte, on ne peut pas trancher.
-- **Pourquoi** : une ligne, le marqueur de la grille (ou « hors grille »).
+- **Pourquoi** : une ligne courte, le marqueur de la grille (ou « hors grille »). Pas de justification en plusieurs phrases.
 - **Niveau et type** en tête : **FORT** (tournure typique, gratuite, ou plusieurs marqueurs dans le même paragraphe), **MOYEN** (marqueur réel, mais qui peut être un choix de voix), **FAIBLE** (habitude humaine courante).
-- **Choix** : une ou deux reformulations (A, B…) qui gardent chaque fait, nom et nuance, et toujours « Garder tel quel ». Ne toucher qu'aux mots en gras. Jamais d'exemple, de chiffre ou d'anecdote absents de la source : si le passage ne dit rien de concret, retirer la formule (comme A ci-dessus) et demander ce qu'elle voulait dire, sans le deviner.
-- **Réponse attendue**, en dernière ligne : « A, B, garder, ou ta réponse. » (« votre réponse » si la personne vouvoie). On n'applique que ce qui a été choisi, et rien sans réponse (voir « Ce que vaut une réponse »).
+- **Choix** : une reformulation (A), ou deux (A et B) seulement si elles vont dans des directions vraiment différentes. Chaque reformulation garde chaque fait, nom et nuance. « Garder » n'a jamais de lettre : c'est toujours l'option implicite, rappelée dans la dernière ligne. Ne toucher qu'aux mots en gras. Jamais d'exemple, de chiffre ou d'anecdote absents de la source : si le passage ne dit rien de concret, retirer la formule (comme A ci-dessus) et demander ce qu'elle voulait dire, sans le deviner.
+- **Réponse attendue**, en dernière ligne, avec exactement les options de la fiche : « A, garder, ou ta version. » ou « A, B, garder, ou ta version. » (« votre version » si la personne vouvoie). Si l'interface affiche des boutons de réponse et n'en permet que deux : avec une seule reformulation, « A » et « Garder » ; avec deux, « A » et « B », et « garder » reste dans la dernière ligne. Les boutons et la dernière ligne disent toujours la même chose. On n'applique que ce qui a été choisi, et rien sans réponse (voir « Ce que vaut une réponse »).
 
 **Pendant les fiches** :
 - Quand un fait est corrigé, chercher tout de suite les autres endroits du document qui le répètent (ex. un tarif corrigé dans la section « Offre », encore présent dans la FAQ) et les proposer dans la même fiche.
@@ -111,7 +105,7 @@ Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en
 - Quand la personne dicte en vrac (souvenirs, avis, ce qu'elle veut dire), mettre en forme **avec ses mots** : ordre, ponctuation, accords, rien d'autre. Ne pas inventer d'humour, d'émotion ou de détail ; si le cadre en demande, le lui dire et la laisser compléter. Signaler une ambiguïté par une question courte.
 - Source sans outil pour l'écrire (PDF, Keynote, outil en ligne non connecté) : ne rien modifier, garder la liste des décisions. Sinon, voir « Reporter dans la source ».
 
-**4. Après la dernière fiche**, trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément) :
+**4. Après la dernière fiche**, un bilan court. Trois blocs, chacun sous un intitulé en gras et en liste (une ligne par élément), puis une ligne « Relecture » (guide de voix utilisé, score avant et après si des passages ont changé, ce qui n'a pas été relu) :
 - **Décisions** : dans l'ordre suivi pour les fiches, une ligne par passage au format « avant → après », ou « gardé tel quel ». Prête à reporter dans le fichier source.
 - **Non traité** : une ligne par niveau ou type laissé de côté, avec le nombre de passages.
 - **Relu sans rien relever** : une ligne par section, avec ce qui y a été vérifié.

@@ -13,8 +13,8 @@ Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il r
 ## Ce qu'il fait
 
 1. Il vous demande si le texte a été rédigé avec une IA. Si oui, il cherche aussi ce qui manque : un exemple vécu, une prise de position, vos expressions.
-2. Il donne un score sur 10, puis, une ligne chacun, le nombre de passages par niveau (fort, moyen, faible), ce qui bloque (texte encore en brouillon, fait à vérifier) et le guide de voix utilisé.
-3. Il vous demande ce que vous voulez traiter, par exemple « forts et moyens, sauf la langue ».
+2. Il commence court : le problème principal en une phrase, le score sur 10, le nombre de fiches et le temps, et ce qui bloque s'il y a quelque chose. Le détail vient à la fin.
+3. Au-delà de 10 passages, il vous demande ce que vous voulez traiter, par exemple « forts et moyens ».
 4. Il présente les passages un par un, dans l'ordre du texte (par écran pour une interface), et attend votre réponse avant de passer au suivant.
 5. À la fin, il vous rend trois listes :
    - vos décisions au format « avant → après », prêtes à reporter ;
@@ -56,12 +56,11 @@ La grille couvre six familles : structures de phrase, vocabulaire surreprésent
 >
 > **Pourquoi** : accroche en question, formule-choc en deux temps, « au cœur de ».
 >
-> - **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
-> - **B.** Garder tel quel.
+> **A.** « Consultante en stratégie digitale, j'accompagne les PME dans le choix de leurs outils. »
 >
 > **Question** : « l'humain », concrètement, ce sont les équipes, les clients, ou les deux ? Si c'est important pour vous, on peut le dire en une phrase.
 >
-> A, B, garder, ou votre réponse.
+> A, garder, ou votre version.
 
 ## Installation
 
