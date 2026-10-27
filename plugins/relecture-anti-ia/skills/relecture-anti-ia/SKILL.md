@@ -1,11 +1,11 @@
 ---
 name: relecture-anti-ia
-description: Relire un texte en français et rendre un rapport détaillé des tournures typiques d'une IA (ChatGPT, Claude, Gemini) : chaque passage cité dans son contexte, niveau estimé, reformulations proposées. La personne qui écrit tranche : rien n'est modifié sans son accord, sauf le mode « Corrige typo, orthographe et registre » (langue et registre) quand elle le demande. À utiliser avant de livrer un texte web ou pro destiné à être lu par d'autres (page web, FAQ, post LinkedIn, e-mail, newsletter, slide, textes d'interface d'une app ou d'un logiciel : boutons, messages d'erreur, onboarding, fichiers de traduction), et dès que l'utilisateur dit « ça fait IA », « phrase IA », « trop ChatGPT », « pas naturel », « réécris plus simple », même sans dire « anti-IA ». Ne s'applique pas à la fiction.
+description: Relire un texte en français et rendre un rapport détaillé des tournures typiques d'une IA (ChatGPT, Claude, Gemini) : chaque passage cité dans son contexte, niveau estimé, reformulations proposées. La personne qui écrit tranche : rien n'est modifié sans son accord, sauf les modes « Corrige typo, orthographe et registre » et « Corrige tout » quand elle les demande. À utiliser avant de livrer un texte web ou pro destiné à être lu par d'autres (page web, FAQ, post LinkedIn, e-mail, newsletter, slide, textes d'interface d'une app ou d'un logiciel : boutons, messages d'erreur, onboarding, fichiers de traduction), et dès que l'utilisateur dit « ça fait IA », « phrase IA », « trop ChatGPT », « pas naturel », « réécris plus simple », même sans dire « anti-IA ». Ne s'applique pas à la fiction.
 ---
 
 # Relecture anti-IA (français)
 
-But : aider la personne qui écrit à rendre un texte tel qu'elle l'aurait écrit elle-même. Le skill **montre et propose, il ne corrige pas** : aucune modification du texte ou du fichier sans son accord, passage par passage. Seule exception, à sa demande : le mode « Corrige typo, orthographe et registre » (voir plus bas), limité à la langue et au registre.
+But : aider la personne qui écrit à rendre un texte tel qu'elle l'aurait écrit elle-même. Le skill **montre et propose, il ne corrige pas** : aucune modification du texte ou du fichier sans son accord, passage par passage. Exceptions, à sa demande seulement : les modes « Corrige typo, orthographe et registre » et « Corrige tout » (voir plus bas).
 
 Un marqueur isolé ne prouve rien : beaucoup sont des habitudes humaines légitimes. D'où le niveau estimé pour chaque passage, et la règle : on signale tout ce qu'on voit, on ne décide pas à sa place.
 
@@ -116,7 +116,7 @@ Chaque partie de la fiche sur sa propre ligne, séparée par une ligne vide : en
 
 Texte collé dans la conversation : après ces trois blocs, rendre le texte complet avec les choix appliqués, prêt à copier.
 
-## Deux modes plus rapides
+## Trois modes plus rapides
 
 Seulement si la personne les demande. Par défaut : une fiche à la fois.
 
@@ -148,6 +148,35 @@ Toutes les fiches retenues en tableaux numérotés, avec les colonnes Section, P
 - au-delà d'environ 40 fiches, proposer d'abord de limiter les niveaux traités.
 
 Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
+
+### « Corrige tout »
+
+Pour les très gros volumes (des centaines de passages). **Déconseillé** : le dire au lancement en une ligne (« Le texte va perdre une partie de votre voix ; je recommande de relire au moins les passages FORT »), puis continuer si la personne confirme.
+
+1. Mêmes étapes 1 à 3 que « Corrige typo, orthographe et registre » (références, format, copie).
+2. Appliquer la typo, l'orthographe et le registre, puis la proposition A de chaque passage FORT et MOYEN. Les FAIBLE restent tels quels.
+3. Ne jamais appliquer seul, mais lister sous **À voir vous-même** : brouillons, faits personnels à valider, citations d'autrui, passages où la fiche aurait posé une question, cas « à trancher ».
+4. Vérifier avant de livrer (voir « Vérification avant de livrer », obligatoire dans ce mode).
+5. Livrer, une information par ligne :
+   - le score avant et après ;
+   - la liste « avant → après », section par section ;
+   - **À voir vous-même** ;
+   - pour un texte collé, le texte complet corrigé.
+
+## Vérification avant de livrer
+
+Obligatoire en mode « Corrige tout » ; à proposer dans les autres modes quand plus de 20 passages ont été modifiés.
+
+1. **Contrôle mécanique**, si Python est disponible : écrire l'original et le résultat dans deux fichiers temporaires, puis lancer `python3 -I "${CLAUDE_SKILL_DIR}/scripts/compare.py" AVANT APRES`. Le script signale tout chiffre, variable, balise, lien, adresse e-mail ou citation modifiés (BLOQUANT), et les noms propres ajoutés ou retirés (À VÉRIFIER).
+2. **Relecture indépendante**, si l'outil Agent est disponible : lancer un agent qui reçoit seulement l'original, le résultat et cette liste, sans le raisonnement de la relecture :
+   - aucun fait ajouté ni retiré (noms, chiffres, dates, lieux, promesses) ;
+   - variables, balises et citations identiques ;
+   - sens conservé (public visé, conviction, nuance) ;
+   - aucune nouvelle tournure de la grille introduite, et le score du résultat ;
+   - registre cohérent sur tout le texte.
+   Il répond par passage : OK, ou le problème en une ligne.
+3. Sans Agent : faire cette relecture soi-même, et le dire dans le rapport (« vérifié sans relecteur indépendant »).
+4. Tout passage signalé par le script ou par le relecteur est **remis dans son état d'origine** et passe en fiche. Ne jamais livrer un passage qui a échoué.
 
 ## Règles communes
 
