@@ -18,6 +18,16 @@ Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il r
 4. Il présente les passages un par un, dans l'ordre du texte, et attend votre réponse avant de passer au suivant.
 5. À la fin, il vous rend la liste de vos décisions au format « avant → après », prête à reporter.
 
+### Deux modes plus rapides
+
+Sur demande seulement :
+- **« Corrige le simple »** : le skill applique lui-même la typographie, les accords et le registre (tu ou vous, on ou nous), puis liste chaque changement. Les tournures restent à trancher une à une.
+- **« Tout d'un coup »** : toutes les fiches dans un seul tableau, et vous répondez en une ligne (« 1A, 2 garder, 3B »).
+
+### Un fichier pour votre voix
+
+Si un fichier `voix.md` existe à la racine du projet ou dans `~/.claude/`, le skill s'en sert : votre registre, les mots qui sont à vous (il ne les relève plus), ceux que vous refusez, vos règles de typographie. Un modèle est dans [exemples/voix.md](exemples/voix.md). Sans ce fichier, le skill marche quand même, et peut vous proposer d'en créer un à la fin d'une relecture.
+
 La grille couvre six familles : structures de phrase, vocabulaire surreprésenté, mise en forme et typographie française, ton, calques de l'anglais, et régularité (des paragraphes tous coulés dans le même moule).
 
 ## Exemple de fiche
@@ -71,6 +81,20 @@ cp -r relecture-anti-ia/plugins/relecture-anti-ia/skills/relecture-anti-ia ~/.cl
 Si vous avez déjà un dossier `~/.claude/skills/relecture-anti-ia`, cette commande écrase son `SKILL.md` : sauvegardez-le ou renommez-le avant. N'installez pas non plus le plugin et la copie en même temps : les deux répondraient aux mêmes demandes.
 
 Le skill se lance alors avec `/relecture-anti-ia`, ou tout seul quand vous écrivez « ça fait IA » ou « trop ChatGPT ».
+
+## Mises à jour
+
+Claude Code ne met pas à jour ce plugin tout seul. Pour l'activer : `/plugin`, onglet Marketplaces, choisir `cateline-puccetti`, puis « Enable auto-update ». Ou à la main, quand vous voulez :
+
+```bash
+claude plugin marketplace update cateline-puccetti
+```
+
+```bash
+claude plugin update relecture-anti-ia@cateline-puccetti
+```
+
+Pour être prévenu des nouvelles versions, suivez les Releases du dépôt sur GitHub (bouton Watch, puis Custom, puis Releases). En copie simple, refaites la copie.
 
 ## Limites
 

@@ -5,11 +5,23 @@ description: Relire un texte en français et rendre un rapport détaillé des to
 
 # Relecture anti-IA (français)
 
-But : aider la personne qui écrit à rendre un texte tel qu'elle l'aurait écrit elle-même. Le skill **montre et propose, il ne corrige pas** : aucune modification du texte ou du fichier sans son accord, passage par passage.
+But : aider la personne qui écrit à rendre un texte tel qu'elle l'aurait écrit elle-même. Le skill **montre et propose, il ne corrige pas** : aucune modification du texte ou du fichier sans son accord, passage par passage. Seule exception, à sa demande : le mode « Corrige le simple » (voir plus bas), limité à la langue et au registre.
 
 Un marqueur isolé ne prouve rien : beaucoup sont des habitudes humaines légitimes. D'où le niveau estimé pour chaque passage, et la règle : on signale tout ce qu'on voit, on ne décide pas à sa place.
 
 **Hors champ : la fiction** (roman, nouvelle, conte, poème). Ce skill n'y touche pas.
+
+## Fichier voix
+
+Avant de relire, chercher un fichier `voix.md` : d'abord à la racine du projet, puis dans `~/.claude/voix.md`. S'il existe, le lire et s'en servir pour toute la relecture :
+- **registre** (tu ou vous, on ou nous, écriture inclusive ou non) : c'est la référence, ne plus poser la question ;
+- **mots et tournures à soi** : ne jamais les relever, même s'ils sont dans la grille ; les préférer dans les reformulations ;
+- **mots refusés** : les relever au niveau FORT, quel que soit le contexte ;
+- **règles typographiques** (tiret cadratin, emojis, insécables) : elles passent avant la grille.
+
+Le fichier décrit une voix, il ne contient pas de faits : ne jamais en tirer d'anecdote, de chiffre ou de souvenir pour compléter un texte.
+
+S'il n'existe pas, relire normalement. En fin de relecture, si des décisions se répètent (même registre, même mot refusé trois fois), proposer de les noter dans un `voix.md` et montrer le contenu avant de l'écrire. Ne jamais créer ni modifier ce fichier sans accord.
 
 ## Méthode
 
@@ -68,6 +80,10 @@ Puis demander quels niveaux et quels types traiter (ex. « forts et moyens, sauf
 - Une décision vaut pour la suite : si un passage reformulé contient un marqueur qu'il a déjà été décidé de réduire, l'appliquer et le dire.
 - Quand la personne dicte en vrac (souvenirs, avis, ce qu'elle veut dire), mettre en forme **avec ses mots** : ordre, ponctuation, accords, rien d'autre. Ne pas inventer d'humour, d'émotion ou de détail ; si le cadre en demande, le lui dire et la laisser compléter. Signaler une ambiguïté par une question courte.
 - Fichier source hors de portée (PDF, outil en ligne) : ne rien modifier, garder la liste des décisions.
+
+**Deux modes plus rapides, seulement si la personne les demande** (par défaut : une fiche à la fois) :
+- **« Corrige le simple »** : appliquer directement au fichier les corrections de type **langue** (typographie, accords, graphies en double) et **registre** (une fois le registre connu, par `voix.md` ou par une seule question). Puis lister chaque changement au format « avant → après », et enchaîner sur les fiches pour le reste. Jamais pour les tournures IA, le ton, la régularité ni les brouillons : ces choix restent passage par passage. Hors fichier (texte collé dans la conversation), rendre le texte corrigé au lieu de modifier un fichier.
+- **« Tout d'un coup »** : montrer toutes les fiches retenues dans un seul tableau numéroté (passage, pourquoi, A, B), et accepter une réponse en une ligne (« 1A, 2 garder, 3B… »). Rien n'est appliqué sans réponse pour chaque numéro ; un numéro sans réponse reste inchangé et est rappelé à la fin.
 
 **4. Après la dernière fiche** : la liste complète des décisions, section par section, au format « avant → après » (et les passages gardés tels quels), prête à reporter dans le fichier source ; les niveaux et types non traités en une ligne chacun (dans l'ordre du texte), puis les sections relues sans rien relever et ce qui y a été vérifié.
 
