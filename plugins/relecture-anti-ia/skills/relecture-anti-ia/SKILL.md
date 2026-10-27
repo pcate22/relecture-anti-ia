@@ -47,11 +47,16 @@ S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se
 
 Le rapport doit être facile à lire : il se parcourt d'un coup d'œil, l'essentiel en premier, toujours dans le même ordre. Pas d'emoji.
 
-**1. Score global**, en tête, sur trois lignes maximum :
+**1. Score global**, en tête : une information par ligne, en liste courte, jamais plusieurs éléments à la suite sur une même ligne :
 
-> Score de tournures IA : 3/10 (faible). 2 passages forts, 3 moyens, 4 faibles.
-> Bloquant : la section « Tarifs » est encore en brouillon.
-> Temps estimé pour trancher : 10 minutes.
+> **Score de tournures IA : 3/10** (faible)
+>
+> - 2 passages forts
+> - 3 moyens
+> - 4 faibles
+> - Bloquant : la section « Tarifs » est encore en brouillon
+> - Guide de voix : `voix.md` (racine du projet)
+> - Temps estimé pour trancher : 10 minutes
 
 Ce score mesure les tournures d'IA, **pas la provenance** : une IA bien guidée (consignes de style) les évite, et son texte peut avoir un score bas. Le dire dans le rapport quand le texte a été rédigé avec une IA.
 

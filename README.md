@@ -13,7 +13,7 @@ Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il r
 ## Ce qu'il fait
 
 1. Il vous demande si le texte a été rédigé avec une IA. Si oui, il cherche aussi ce qui manque : un exemple vécu, une prise de position, vos expressions.
-2. Il donne un score sur 10, le nombre de passages par niveau (fort, moyen, faible) et ce qui bloque (texte encore en brouillon, fait à vérifier).
+2. Il donne un score sur 10, puis, une ligne chacun, le nombre de passages par niveau (fort, moyen, faible), ce qui bloque (texte encore en brouillon, fait à vérifier) et le guide de voix utilisé.
 3. Il vous demande ce que vous voulez traiter, par exemple « forts et moyens, sauf la typographie ».
 4. Il présente les passages un par un, dans l'ordre du texte (par écran pour une interface), et attend votre réponse avant de passer au suivant.
 5. À la fin, il vous rend la liste de vos décisions au format « avant → après », prête à reporter.
