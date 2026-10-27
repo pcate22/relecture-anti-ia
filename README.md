@@ -21,11 +21,15 @@ Ce skill aide à retrouver sa propre voix dans un texte écrit avec une IA. Il r
    - ce qui n'a pas été traité ;
    - les sections relues sans rien relever.
 
-### Deux modes plus rapides
+### Trois modes plus rapides
 
 Sur demande seulement :
 - **« Corrige typo, orthographe et registre »** : le skill applique lui-même la typographie, les accords et le registre (tu ou vous, on ou nous), puis liste chaque changement. Les tournures restent à trancher une à une.
 - **« Tout d'un coup »** : toutes les fiches dans un seul tableau, et vous répondez en une ligne (« 1A, 2 garder, 3B »).
+
+### Pour les très gros volumes
+
+**« Corrige tout »** (déconseillé) : le skill applique aussi ses propositions pour les passages forts et moyens, puis vous rend le texte corrigé. Il ne touche jamais aux brouillons, aux faits personnels ni aux citations : il les liste sous « À voir vous-même ». Avant de livrer, il vérifie le résultat avec un script (chiffres, variables, liens et citations inchangés) et, quand c'est possible, avec un agent indépendant. Un passage qui échoue revient à son état d'origine.
 
 ### Votre guide de voix
 
@@ -120,6 +124,16 @@ claude plugin uninstall relecture-anti-ia@cateline-puccetti
 ```bash
 claude plugin marketplace remove cateline-puccetti
 ```
+
+## Tests
+
+Le plugin a une série de cas de test dans `plugins/relecture-anti-ia/evals/` : post LinkedIn, texte écrit sans IA, fichier de traduction JSON, réécriture d'une page « À propos », mode « Corrige tout ». Pour les lancer depuis ce dossier :
+
+```bash
+claude plugin eval . --scaffold --allow-tools Write Edit Bash --no-publish
+```
+
+Le dossier `evals/json-typo/fixture.sh` crée un fichier de test, d'où l'option `--scaffold`. Lisez-le avant de lancer.
 
 ## Limites
 
