@@ -1,6 +1,6 @@
 # Ma voix
 
-À copier à la racine d'un projet, ou dans `~/.claude/voix.md` pour tous les projets. Chaque section est facultative : gardez seulement ce qui vous sert.
+À copier à la racine d'un projet ou dans `~/.claude/`, ou à garder où vous voulez (Notion, Google Docs) en indiquant son emplacement dans votre `CLAUDE.md`. Chaque section est facultative : gardez seulement ce qui vous sert.
 
 ## Registre
 

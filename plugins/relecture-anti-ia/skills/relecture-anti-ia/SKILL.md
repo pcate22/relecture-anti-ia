@@ -11,17 +11,25 @@ Un marqueur isolé ne prouve rien : beaucoup sont des habitudes humaines légiti
 
 **Hors champ : la fiction** (roman, nouvelle, conte, poème). Ce skill n'y touche pas.
 
-## Fichier voix
+## Guide de voix
 
-Avant de relire, chercher un fichier `voix.md` : d'abord à la racine du projet, puis dans `~/.claude/voix.md`. S'il existe, le lire et s'en servir pour toute la relecture :
+Avant de relire, trouver le guide de voix de la personne, s'il existe. Il peut porter un autre nom ou vivre ailleurs (Notion, Google Docs, site de marque). Dans cet ordre, et s'arrêter au premier trouvé :
+
+1. **Une indication déjà donnée** : un chemin ou un lien vers un guide de voix, un « tone of voice », une charte éditoriale ou un guide de style dans le `CLAUDE.md` du projet ou de `~/.claude/`, ou plus tôt dans la conversation.
+2. **Un fichier local au nom parlant**, à la racine du projet puis dans `~/.claude/` (sans fouiller le reste du disque) : `voix.md`, `ma-voix.md`, `ton.md`, `charte-editoriale.md`, `guide-de-style.md`, `style.md`, `brand-voice.md`, `tone-of-voice.md`, `tone_of_voice.md`, `voice.md`, `tone.md`. Ignorer la casse, les espaces et l'extension (`.md`, `.txt`) : « Tone of Voice.md » compte.
+3. **Sinon, demander une fois** : « As-tu un guide de voix (tone of voice) ou une charte éditoriale (fichier, page Notion, document en ligne) ? Si oui, donne-moi le chemin ou le lien. » Accepter « non » et relire normalement.
+
+Si la réponse est un lien : le lire avec l'outil connecté qui convient (Notion, Google Drive…). Si aucun outil n'y a accès, demander de coller le contenu. Puis proposer d'ajouter une ligne dans le `CLAUDE.md` (« Guide de voix : <chemin ou lien> ») pour ne plus avoir à le demander ; ne l'écrire qu'avec accord.
+
+Une fois trouvé, le lire et s'en servir pour toute la relecture :
 - **registre** (tu ou vous, on ou nous, écriture inclusive ou non) : c'est la référence, ne plus poser la question ;
 - **mots et tournures à soi** : ne jamais les relever, même s'ils sont dans la grille ; les préférer dans les reformulations ;
 - **mots refusés** : les relever au niveau FORT, quel que soit le contexte ;
 - **règles typographiques** (tiret cadratin, emojis, insécables) : elles passent avant la grille.
 
-Le fichier décrit une voix, il ne contient pas de faits : ne jamais en tirer d'anecdote, de chiffre ou de souvenir pour compléter un texte.
+Le guide décrit une voix, il ne contient pas de faits : ne jamais en tirer d'anecdote, de chiffre ou de souvenir pour compléter un texte. Dire en tête du rapport quel guide a servi (ou qu'aucun n'a été trouvé).
 
-S'il n'existe pas, relire normalement. En fin de relecture, si des décisions se répètent (même registre, même mot refusé trois fois), proposer de les noter dans un `voix.md` et montrer le contenu avant de l'écrire. Ne jamais créer ni modifier ce fichier sans accord.
+S'il n'y en a pas, relire normalement. En fin de relecture, si des décisions se répètent (même registre, même mot refusé trois fois), proposer de les noter dans un `voix.md` et montrer le contenu avant de l'écrire. Ne jamais créer ni modifier ce fichier sans accord.
 
 ## Méthode
 

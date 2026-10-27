@@ -24,9 +24,11 @@ Sur demande seulement :
 - **« Corrige le simple »** : le skill applique lui-même la typographie, les accords et le registre (tu ou vous, on ou nous), puis liste chaque changement. Les tournures restent à trancher une à une.
 - **« Tout d'un coup »** : toutes les fiches dans un seul tableau, et vous répondez en une ligne (« 1A, 2 garder, 3B »).
 
-### Un fichier pour votre voix
+### Votre guide de voix
 
-Si un fichier `voix.md` existe à la racine du projet ou dans `~/.claude/`, le skill s'en sert : votre registre, les mots qui sont à vous (il ne les relève plus), ceux que vous refusez, vos règles de typographie. Un modèle est dans [exemples/voix.md](exemples/voix.md). Sans ce fichier, le skill marche quand même, et peut vous proposer d'en créer un à la fin d'une relecture.
+Le skill cherche votre guide de voix avant de relire : d'abord un chemin ou un lien indiqué dans votre `CLAUDE.md`, puis un fichier au nom parlant à la racine du projet ou dans `~/.claude/` (`voix.md`, `charte-editoriale.md`, `guide-de-style.md`, `brand-voice.md`, `tone-of-voice.md`…). S'il ne trouve rien, il vous demande une fois si vous en avez un, en fichier, sur Notion ou ailleurs. Un lien Notion ou Google Docs se lit si l'outil est connecté à Claude ; sinon, collez le contenu.
+
+Il s'en sert pour votre registre, les mots qui sont à vous (il ne les relève plus), ceux que vous refusez et vos règles de typographie. Un modèle est dans [exemples/voix.md](exemples/voix.md). Pour qu'il ne pose plus la question, ajoutez à votre `CLAUDE.md` une ligne comme `Guide de voix : ~/Documents/ma-voix.md`.
 
 La grille couvre six familles : structures de phrase, vocabulaire surreprésenté, mise en forme et typographie française, ton, calques de l'anglais, et régularité (des paragraphes tous coulés dans le même moule).
 
