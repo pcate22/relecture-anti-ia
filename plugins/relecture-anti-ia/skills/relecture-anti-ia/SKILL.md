@@ -235,6 +235,8 @@ Boutons, libellés, messages d'erreur, états vides, onboarding, notifications, 
 - **Accessibilité** : relire aussi les textes alternatifs, `aria-label` et libellés pour lecteur d'écran. Un `alt` qui commence par « Image de » ou un bouton-icône sans libellé sont à signaler.
 - **Ordre des fiches** : par écran ou par type d'élément (boutons, erreurs, états vides, aide) plutôt que dans l'ordre du fichier. Annoncer le regroupement choisi.
 
+**Hors champ : l'accessibilité cognitive** (règles d'IHM adaptées aux personnes DYS, TDAH, TSA, FALC). Ce skill ne relit que la voix et la clarté des textes. Si un skill d'accessibilité cognitive est installé, le proposer à la fin du rapport ; sinon, le signaler en une ligne quand la demande porte sur ce sujet.
+
 S'il existe un glossaire produit (même recherche que pour le guide de voix : `glossaire.md`, `glossary.md`, lien dans le `CLAUDE.md`, sinon une question), ses termes font référence.
 
 Les règles propres à un projet passent avant cette grille (ex. une charte éditoriale qui impose la forme positive ou interdit le tiret cadratin).
